@@ -197,7 +197,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const entry = {
+            // Create the new entry
+            const newEntry = {
                 name,
                 category,
                 priority,
@@ -207,9 +208,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 timestamp: getCurrentTimestamp(),
             };
 
-            navigator.clipboard.writeText(JSON.stringify(entry, null, 4))
-                .then(() => alert('Entry copied to clipboard!'))
-                .catch(() => alert('Failed to copy entry to clipboard.'));
+            // Create a copy of the full wishlist
+            const updatedWishlist = getAllWishlistEntries().filter(
+                (entry) => !(entry.name === newEntry.name && entry.category === newEntry.category)
+            );
+
+            // Append the new entry
+            updatedWishlist.push(newEntry);
+
+            // Sort by priority (highest to lowest)
+            const sortedWishlist = updatedWishlist.sortWishlistEntriesByPriority("Up");
+
+            // Save to clipboard
+            navigator.clipboard.writeText(JSON.stringify(sortedWishlist, null, 4))
+                .then(() => alert('Updated wishlist copied to clipboard!'))
+                .catch(() => alert('Failed to copy updated wishlist to clipboard.'));
         });
     };
 
