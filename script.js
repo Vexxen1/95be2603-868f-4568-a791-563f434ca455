@@ -240,7 +240,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('entry-description').value = entry.description;
             document.getElementById('entry-link').value = entry.link;
         });
-
         document.getElementById('copy-to-clipboard').addEventListener('click', () => {
             const name = document.getElementById('entry-name').value.trim();
             const category = document.getElementById('entry-category').value.trim();
@@ -264,17 +263,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 timestamp: getCurrentTimestamp(),
             };
 
-            const updatedWishlist = getAllWishlistEntries().filter(
+            // Filter out any existing entries with the same name and category
+            wishlist = wishlist.filter(
                 (entry) => !(entry.name === newEntry.name && entry.category === newEntry.category)
             );
 
-            updatedWishlist.push(newEntry);
+            // Add the new entry
+            wishlist.push(newEntry);
 
-            const sortedWishlist = updatedWishlist.sortWishlistEntriesByPriority('Up');
+            // Sort the wishlist by priority
+            wishlist = wishlist.sortWishlistEntriesByPriority('Up');
 
-            navigator.clipboard.writeText(JSON.stringify(sortedWishlist, null, 4))
-                .then(() => alert('Updated wishlist copied to clipboard!'))
+            // Save the updated wishlist to clipboard
+            navigator.clipboard.writeText(JSON.stringify(wishlist, null, 4))
+                .then(() => alert('Updated wishlist saved to instance and copied to clipboard!'))
                 .catch(() => alert('Failed to copy updated wishlist to clipboard.'));
+
+            // Re-render the list to reflect changes
+            renderWishlist(wishlist);
         });
     };
 
