@@ -1,194 +1,14 @@
 {
-    "changelog": "",
+    "changelog": "- Adding Links",
     "data": [
         {
             "name": "The Wild Robot Movie",
             "category": "Movies & TV shows",
             "priority": 3,
-            "value": 8.0,
+            "value": 8,
             "description": "Fucking amazing movie, we would all love it, the next fucking wall-E. Nice physical copies available.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Wolf Walkers",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 6.0,
-            "description": "I could not find a english dvd release, best option i could find",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Venom 1, 2, 3",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 8.0,
-            "description": "Amazing movies. Epic. Fucking lovely.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Marvel Movies we are Missing",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 7.0,
-            "description": "Eh",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "All of Doctor Who",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 9.0,
-            "description": "Seasons 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14. Get them.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "All of Adventure Time",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 7.0,
-            "description": "Yep. Cool. Want it for my collection.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Gravity Falls season 1, and 2",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 4.0,
-            "description": "Yep. Cool. Want it for my collection.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "All of The Owl House",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 3.0,
-            "description": "Yep. Cool. Want it for my collection.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Iron Giant",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 6.0,
-            "description": "Nostalgia, Cool. Want it for my collection. Good for fam.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "All Harry Potter Movies",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 5.5,
-            "description": "Nostalgia, Cool. Want it for my collection. Plus, cool for fam(only reason for higher score).",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Leo (2024) Movie",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 6.0,
-            "description": "Be careful, idk, there is bluerays for this movie, but all i found was some on ebay.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Heroes Seasons 1-4 (TV Show)",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 5.0,
-            "description": "Yep. Cool. Want it for my collection. I think mom would like it\u2026 perhaps.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "All of Rick & Morty: 1-5, 6, 7,",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 4.0,
-            "description": "Yep. Cool. Want it for my collection.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Limitless (TV show)",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 5.0,
-            "description": "Yep. Cool. Want it for my collection. I think mom would like it.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Emperor\u2019s New Groove",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 8.0,
-            "description": "Nostalgia, Cool. Want it for my collection.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Umbrella Academy Season 3",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 6.0,
-            "description": "Unreleased as far as I can tell as of September 26, 2023.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Doom Patrol Season 1",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 6.0,
-            "description": "Yep. Cool. Want it for my collection. I think mom would like it.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Doom Patrol Season 2",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 6.0,
-            "description": "Yep. Cool. Want it for my collection. I think mom would like it.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Doom Patrol Season 3",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 6.0,
-            "description": "Yep. Cool. Want it for my collection. I think mom would like it.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Doom Patrol Season 4",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 6.0,
-            "description": "Yep. Cool. Want it for my collection. I think mom would like it.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Phineas & Ferb, all seasons, hard copies",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 4.0,
-            "description": "Nostalgia, Cool. Want it for my collection.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://www.amazon.com/Wild-Robot-UHD-Blu-ray-Digital/dp/B0DGY4LZXC",
+            "timestamp": "2024-12-01T21:55:13.931Z"
         },
         {
             "name": "Book of Bill",
@@ -209,43 +29,151 @@
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "FNAF Ultimate Guide",
-            "category": "Hardback Books",
-            "priority": 1,
-            "value": 3.0,
-            "description": "Eh\u2026 collectors item.",
+            "name": "PC Fallout 4 + Fallout VR + Fallout DLC",
+            "category": "Video Games & Programs",
+            "priority": 3,
+            "value": 4,
+            "description": "I like the games. Has good modding, VR is fucking cool. Yeah. Not sure how much i will play it thou. As im finding if its not minecraft, its best to have a set ending, otherwise i get board.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "FNAF Character Encyclopedia",
-            "category": "Hardback Books",
-            "priority": 1,
-            "value": 3.0,
-            "description": "Eh\u2026 collectors item.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Tales from the Pizzaplex",
-            "category": "Hardback Books",
+            "name": "Personal Server",
+            "category": "Physical Things",
             "priority": 2,
-            "value": 2.0,
-            "description": "Eh\u2026 collectors item\u2026 but stories. So\u2026 cool i guess.",
+            "value": 10,
+            "description": "Would be nice to run my server from home, and have it have 64, or 32GB instead of the 30 or so we get max from online hosting.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "Fazbear Frights",
-            "category": "Hardback Books",
+            "name": "All of Doctor Who",
+            "category": "Movies & TV shows",
             "priority": 2,
-            "value": 2.0,
-            "description": "Eh\u2026 collectors item\u2026 but stories. So\u2026 cool i guess.",
+            "value": 9,
+            "description": "Seasons 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14. Get them.",
+            "link": "https://www.amazon.com/Doctor-Who-Season-8-Blu-ray/dp/B00IT3KQWM/ref=sr_1_1?crid=394RYRRISG9AV&keywords=doctor+who+season+8+bluray&qid=1701672115&sprefix=doctor+who+season+bluray%2Caps%2C296&sr=8-1",
+            "timestamp": "2024-12-01T22:03:13.724Z"
+        },
+        {
+            "name": "Venom 1, 2, 3",
+            "category": "Movies & TV shows",
+            "priority": 2,
+            "value": 8,
+            "description": "Amazing movies. Epic. Fucking lovely.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "FNAF(\u2154)",
+            "name": "New Dresser",
+            "category": "Physical Things",
+            "priority": 2,
+            "value": 8,
+            "description": "I don't like my current one in the closet that well. I measured and found this one fits well.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "All of Adventure Time",
+            "category": "Movies & TV shows",
+            "priority": 2,
+            "value": 7,
+            "description": "Yep. Cool. Want it for my collection.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "Marvel Movies we are Missing",
+            "category": "Movies & TV shows",
+            "priority": 2,
+            "value": 7,
+            "description": "Eh",
+            "link": "https://docs.google.com/document/d/1NVyFPplU8um1g7Y8QvMl9GN6noe5PKtBVXlAaGnxIsU/edit?usp=sharing",
+            "timestamp": "2024-12-01T21:58:38.524Z"
+        },
+        {
+            "name": "Excel, Docs, etc",
+            "category": "Video Games & Programs",
+            "priority": 2,
+            "value": 6,
+            "description": "Useful, I have many uses for such things. Though I may only use it occasionally. When i do need it, it will be nice.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "PC Patricks Parabox",
+            "category": "Video Games & Programs",
+            "priority": 2,
+            "value": 6,
+            "description": "Cool puzzle game. Set ending. Nice.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "Decorative Projector",
+            "category": "Physical Things",
+            "priority": 2,
+            "value": 6,
+            "description": "Would be better than star stickers on the walls, that's for sure.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "Wolf Walkers",
+            "category": "Movies & TV shows",
+            "priority": 2,
+            "value": 6,
+            "description": "I could not find a english dvd release, best option i could find",
+            "link": "https://www.amazon.com/Cartoon-Saloons-Folklore-Trilogy-Blu-ray/dp/B07GQ6GL2G/ref=sr_1_1?crid=14UASYG910RAR&keywords=Wolfwalkers&qid=1703758904&s=movies-tv&sprefix=wolfwalkers%2Cmovies-tv%2C232&sr=1-1",
+            "timestamp": "2024-12-01T21:57:25.650Z"
+        },
+        {
+            "name": "Iron Giant",
+            "category": "Movies & TV shows",
+            "priority": 2,
+            "value": 6,
+            "description": "Nostalgia, Cool. Want it for my collection. Good for fam.",
+            "link": "https://www.amazon.com/Iron-Giant-Special-Eli-Marienthal/dp/B00009M9BK/ref=sr_1_5?keywords=Iron+Giant&s=movies-tv&sr=1-5",
+            "timestamp": "2024-12-01T21:59:42.311Z"
+        },
+        {
+            "name": "All Harry Potter Movies",
+            "category": "Movies & TV shows",
+            "priority": 2,
+            "value": 5.5,
+            "description": "Nostalgia, Cool. Want it for my collection. Plus, cool for fam(only reason for higher score).",
+            "link": "https://www.amazon.com/Harry-Potter-Vault-Complete-Special/dp/1647221080/ref=d_m_crc_dp_lf_d_t1_sccl_2_5/145-3965343-1636511?content-id=amzn1.sym.76a0b561-a7b4-41dc-9467-a85a2fa27c1c&pd_rd_i=1647221080&psc=1",
+            "timestamp": "2024-12-01T22:00:18.445Z"
+        },
+        {
+            "name": "NileRed Mug",
+            "category": "Physical Things",
+            "priority": 2,
+            "value": 5,
+            "description": "A nice mug.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "Gravity Falls season 1, and 2",
+            "category": "Movies & TV shows",
+            "priority": 2,
+            "value": 4,
+            "description": "Yep. Cool. Want it for my collection.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "All of The Owl House",
+            "category": "Movies & TV shows",
+            "priority": 2,
+            "value": 3,
+            "description": "Yep. Cool. Want it for my collection.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "FNAF(⅔)",
             "category": "Hardback Books",
             "priority": 2,
             "value": 2.5,
@@ -258,70 +186,106 @@
             "category": "Hardback Books",
             "priority": 2,
             "value": 2.5,
-            "description": "I read them all, but don\u2019t have them all. I need them all\u2026 for my collection\u2026 heh",
+            "description": "I read them all, but don’t have them all. I need them all… for my collection… heh",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "Excel, Docs, etc",
-            "category": "Video Games & Programs",
+            "name": "Tales from the Pizzaplex",
+            "category": "Hardback Books",
             "priority": 2,
-            "value": 6.0,
-            "description": "Useful, I have many uses for such things. Though I may only use it occasionally. When i do need it, it will be nice.",
+            "value": 2,
+            "description": "Eh… collectors item… but stories. So… cool i guess.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "PC Fallout 4 + Fallout VR + Fallout DLC",
-            "category": "Video Games & Programs",
-            "priority": 3,
-            "value": 4.0,
-            "description": "I like the games. Has good modding, VR is fucking cool. Yeah. Not sure how much i will play it thou. As im finding if its not minecraft, its best to have a set ending, otherwise i get board.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "PC Patricks Parabox",
-            "category": "Video Games & Programs",
+            "name": "Fazbear Frights",
+            "category": "Hardback Books",
             "priority": 2,
-            "value": 6.0,
-            "description": "Cool puzzle game. Set ending. Nice.",
+            "value": 2,
+            "description": "Eh… collectors item… but stories. So… cool i guess.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "Emperor’s New Groove",
+            "category": "Movies & TV shows",
+            "priority": 1,
+            "value": 8,
+            "description": "Nostalgia, Cool. Want it for my collection.",
+            "link": "https://www.amazon.com/EMPERORS-NEW-GROOVE-2-MOVIE-COLLECTION/dp/B0B8R97H3X/ref=sr_1_4?keywords=Emperor%E2%80%99s+New+Groove&s=movies-tv&sr=1-4",
+            "timestamp": "2024-12-01T22:04:25.927Z"
+        },
+        {
+            "name": "Umbrella Academy Season 3",
+            "category": "Movies & TV shows",
+            "priority": 1,
+            "value": 6,
+            "description": "Unreleased as far as I can tell as of September 26, 2023.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "Doom Patrol Season 1-4",
+            "category": "Movies & TV shows",
+            "priority": 1,
+            "value": 6,
+            "description": "Yep. Cool. Want it for my collection. I think mom would like it.",
+            "link": "https://www.amazon.com/Doom-Patrol-Complete-Season-Blu-ray/dp/B07TPYY3DV",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        }
+        {
+            "name": "Nilered",
+            "category": "Physical Things",
+            "priority": 1,
+            "value": 6,
+            "description": "Clothes no. But cool things, yes.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "Leo (2024) Movie",
+            "category": "Movies & TV shows",
+            "priority": 1,
+            "value": 6,
+            "description": "Be careful, idk, there is bluerays for this movie, but all i found was some on ebay.",
+            "link": "https://www.imdb.com/title/tt5755238/",
+            "timestamp": "2024-12-01T22:00:50.750Z"
         },
         {
             "name": "PC 4D Golf",
             "category": "Video Games & Programs",
             "priority": 1,
-            "value": 5.0,
+            "value": 5,
             "description": "Puzzle, and golf. What more can i ask for?",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "Rumbe(VR)",
-            "category": "Video Games & Programs",
+            "name": "Heroes Seasons 1-4 (TV Show)",
+            "category": "Movies & TV shows",
             "priority": 1,
-            "value": 2.0,
-            "description": "Good for exercise, and fun sporty game. Beat saber is cool, so is this.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "value": 5,
+            "description": "Yep. Cool. Want it for my collection. I think mom would like it… perhaps.",
+            "link": "https://www.amazon.com/Heroes-Complete-Blu-ray-Masi-Oka/dp/B0126M38H6/ref=sr_1_1?keywords=Heroes+TV+show&s=movies-tv&sr=1-1",
+            "timestamp": "2024-12-01T22:01:34.413Z"
         },
         {
-            "name": "Missing Space Engineers DLC: 1, 2, 3, 4",
-            "category": "Video Games & Programs",
+            "name": "Limitless (TV show)",
+            "category": "Movies & TV shows",
             "priority": 1,
-            "value": 0.25,
-            "description": "I don't have them. I collect them. Whatever. Make sure to cheak for more DLC i do not have, i don\u2019t remember what i don\u2019t have.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "value": 5,
+            "description": "Yep. Cool. Want it for my collection. I think mom would like it.",
+            "link": "https://www.amazon.com/Limitless-Season-Open-your-Mind/dp/B01DBXZRFU",
+            "timestamp": "2024-12-01T22:03:54.884Z"
         },
         {
-            "name": "VR Boneworks",
-            "category": "Video Games & Programs",
+            "name": "Phineas & Ferb, all seasons, hard copies",
+            "category": "Movies & TV shows",
             "priority": 1,
-            "value": 3.0,
-            "description": "Cool, has a ending. Fun gameplay. VR. No body changing \ud83d\ude41. But whatever.",
+            "value": 4,
+            "description": "Nostalgia, Cool. Want it for my collection.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
@@ -329,10 +293,64 @@
             "name": "PC Ark: Survival Evolved",
             "category": "Video Games & Programs",
             "priority": 1,
-            "value": 4.0,
+            "value": 4,
             "description": "Eh, cool game I guess.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "Phineas & Ferb Merch",
+            "category": "Physical Things",
+            "priority": 1,
+            "value": 4,
+            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "FNAF Shirts",
+            "category": "Physical Things",
+            "priority": 1,
+            "value": 4,
+            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "Game Theory Shirts/Merch",
+            "category": "Physical Things",
+            "priority": 1,
+            "value": 4,
+            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "Kurskusart Shirts/Merch",
+            "category": "Physical Things",
+            "priority": 1,
+            "value": 4,
+            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "Marvel Shirts",
+            "category": "Physical Things",
+            "priority": 1,
+            "value": 4,
+            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "All of Rick & Morty: 1-5, 6, 7,",
+            "category": "Movies & TV shows",
+            "priority": 1,
+            "value": 4,
+            "description": "Yep. Cool. Want it for my collection.",
+            "link": "https://www.amazon.com/Rick-Morty-Complete-Seasons-1-5/dp/B09QNZC4VT/ref=sr_1_1?crid=1DDIRKVECUV7C&keywords=Rick+and+Morty%3A+The+Complete+3+Season&qid=1701671551&sprefix=rick+and+morty+the+complete+3+season%2Caps%2C148&sr=8-1",
+            "timestamp": "2024-12-01T22:02:16.075Z"
         },
         {
             "name": "PC Eco",
@@ -344,101 +362,56 @@
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
+            "name": "FNAF Ultimate Guide",
+            "category": "Hardback Books",
+            "priority": 1,
+            "value": 3,
+            "description": "Eh… collectors item.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "FNAF Character Encyclopedia",
+            "category": "Hardback Books",
+            "priority": 1,
+            "value": 3,
+            "description": "Eh… collectors item.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "VR Boneworks",
+            "category": "Video Games & Programs",
+            "priority": 1,
+            "value": 3,
+            "description": "Cool, has a ending. Fun gameplay. VR. No body changing 🙁. But whatever.",
+            "link": "",
+            "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
             "name": "Hyperbolica",
             "category": "Video Games & Programs",
             "priority": 1,
-            "value": 3.0,
+            "value": 3,
             "description": "Eh, cool game I guess.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "NileRed Mug",
-            "category": "Physical Things",
-            "priority": 2,
-            "value": 5.0,
-            "description": "A nice mug.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Phineas & Ferb Merch",
-            "category": "Physical Things",
+            "name": "Rumbe(VR)",
+            "category": "Video Games & Programs",
             "priority": 1,
-            "value": 4.0,
-            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
+            "value": 2,
+            "description": "Good for exercise, and fun sporty game. Beat saber is cool, so is this.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "New Dresser",
-            "category": "Physical Things",
-            "priority": 2,
-            "value": 8.0,
-            "description": "I don't like my current one in the closet that well. I measured and found this one fits well.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Personal Server",
-            "category": "Physical Things",
-            "priority": 2,
-            "value": 10.0,
-            "description": "Would be nice to run my server from home, and have it have 64, or 32GB instead of the 30 or so we get max from online hosting.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "FNAF Shirts",
-            "category": "Physical Things",
+            "name": "Missing Space Engineers DLC: 1, 2, 3, 4",
+            "category": "Video Games & Programs",
             "priority": 1,
-            "value": 4.0,
-            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Game Theory Shirts/Merch",
-            "category": "Physical Things",
-            "priority": 1,
-            "value": 4.0,
-            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Kurskusart Shirts/Merch",
-            "category": "Physical Things",
-            "priority": 1,
-            "value": 4.0,
-            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Nilered",
-            "category": "Physical Things",
-            "priority": 1,
-            "value": 6.0,
-            "description": "Clothes no. But cool things, yes.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Decorative Projector",
-            "category": "Physical Things",
-            "priority": 2,
-            "value": 6.0,
-            "description": "Would be better than star stickers on the walls, that's for sure.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Marvel Shirts",
-            "category": "Physical Things",
-            "priority": 1,
-            "value": 4.0,
-            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
+            "value": 0.25,
+            "description": "I don't have them. I collect them. Whatever. Make sure to cheak for more DLC i do not have, i don’t remember what i don’t have.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         }
