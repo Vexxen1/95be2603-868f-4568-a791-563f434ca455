@@ -162,6 +162,37 @@ label {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.filter-select {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.filter-select div {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    transition: background-color 0.3s ease;
+}
+
+.filter-select div:hover {
+    background-color: #f4f4f4;
+}
+
+.filter-select span {
+    font-size: 14px;
+    text-decoration: underline;
+    color: #007bff;
+    cursor: pointer;
+}
 
 /* Changelog Content */
 .changelog-content {
