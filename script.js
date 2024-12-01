@@ -83,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <select id="category-filter" multiple style="width: 200px; padding: 10px; font-size: 16px;">
                     <option value="All" selected>All Categories</option>
                 </select>
-                <button id="sort-priority-high" style="margin: 0 10px; padding: 10px;">Sort by Priority: Highest</button>
-                <button id="sort-priority-low" style="margin: 0 10px; padding: 10px;">Sort by Priority: Lowest</button>
+                <button id="sort-priority-high" style="margin: 0 10px; padding: 10px;">Sort by Highest Priority</button>
+                <button id="sort-priority-low" style="margin: 0 10px; padding: 10px;">Sort by Lowest Priority</button>
                 <button id="sort-timestamp-newest" style="margin: 0 10px; padding: 10px;">Sort by Newest</button>
                 <button id="sort-timestamp-oldest" style="margin: 0 10px; padding: 10px;">Sort by Oldest</button>
                 <button id="sort-az" style="margin: 0 10px; padding: 10px;">Sort A-Z</button>
@@ -112,10 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     : item.priority === 2
                     ? 'yellow'
                     : 'gray';
+
+                const hasValidLink = item.link && item.link.trim() !== '' && item.link !== 'entity';
+
                 wishlistContainer.innerHTML += `
                     <div style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
                         <h3 style="margin: 0;">
-                            <a href="${item.link}" target="_blank" style="color: blue;">${index + 1}. ${item.name}</a> - 
+                            ${hasValidLink 
+                                ? `<a href="${item.link}" target="_blank" style="color: blue;">${index + 1}. ${item.name}</a>` 
+                                : `${index + 1}. ${item.name}`
+                            } - 
                             <span style="color: ${boxColor};">${item.priority === 3 ? 'Top Priority' : item.priority === 2 ? 'Nice-to-Have' : 'Optional'}</span> - ${item.value}/10
                         </h3>
                         <p style="margin: 5px 0;">${item.description}</p>
@@ -123,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             });
         };
+
 
         // Initial render
         renderWishlist(wishlist);
