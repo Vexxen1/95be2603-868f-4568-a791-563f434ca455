@@ -1,7 +1,7 @@
 // Global variable to store the wishlist data
 let wishlist = [];
 
-// Functions to handle wishlist data
+// Functions to handle wishlist data 
 const getWishlistEntry = (index) => {
     if (index >= 0 && index < wishlist.length) {
         const entry = wishlist[index];
