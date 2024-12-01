@@ -77,52 +77,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to load View List
     const loadViewList = () => {
-        contentDiv.innerHTML = `
-        <h2>View List</h2>
-        <div id="controls" style="margin-bottom: 20px;">
-            <select id="category-filter" multiple style="width: 200px; padding: 10px; font-size: 16px;">
-                <option value="All" selected>All Categories</option>
-            </select>
-            <button id="sort-priority-high" style="margin: 0 10px; padding: 10px;">Sort by Priority: Highest</button>
-            <button id="sort-priority-low" style="margin: 0 10px; padding: 10px;">Sort by Priority: Lowest</button>
-            <button id="sort-timestamp-newest" style="margin: 0 10px; padding: 10px;">Sort by Newest</button>
-            <button id="sort-timestamp-oldest" style="margin: 0 10px; padding: 10px;">Sort by Oldest</button>
-            <button id="sort-az" style="margin: 0 10px; padding: 10px;">Sort A-Z</button>
-            <button id="sort-za" style="margin: 0 10px; padding: 10px;">Sort Z-A</button>
-        </div>
-        <div id="wishlist-items" style="max-height: 600px; overflow-y: auto; margin-bottom: 30px;"></div>
-        <div id="create-entry" style="padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
-            <h3>Create Entry</h3>
-            <div>
-                <label>Load Entry (Enter Number): <input id="entry-load-number" type="number" min="1" style="width: 100%; margin-bottom: 10px;" /></label>
-                <button id="load-entry" style="padding: 10px; width: 100%; margin-bottom: 15px;">Load</button>
+        contentDiv.innerHTML = `<h2 class="section-title">View List</h2>
+
+            <div id="controls" class="controls-container">
+                <select id="category-filter" multiple class="filter-select">
+                    <option value="All" selected>All Categories</option>
+                </select>
+                <button id="sort-priority-high" class="btn">Sort by Priority: Highest</button>
+                <button id="sort-priority-low" class="btn">Sort by Priority: Lowest</button>
+                <button id="sort-timestamp-newest" class="btn">Sort by Newest</button>
+                <button id="sort-timestamp-oldest" class="btn">Sort by Oldest</button>
+                <button id="sort-az" class="btn">Sort A-Z</button>
+                <button id="sort-za" class="btn">Sort Z-A</button>
             </div>
-            <div>
-                <label>Name: <input id="entry-name" type="text" style="width: 100%; margin-bottom: 10px;" /></label>
+
+            <div id="wishlist-items" class="wishlist-container"></div>
+
+            <div id="create-entry" class="create-entry-container">
+                <h3 class="section-title">Create Entry</h3>
+                <div class="form-group">
+                    <label>Load Entry (Enter Number):
+                        <input id="entry-load-number" type="number" min="1" class="input-field" />
+                    </label>
+                    <button id="load-entry" class="btn">Load</button>
+                </div>
+                <div class="form-group">
+                    <label>Name:
+                        <input id="entry-name" type="text" class="input-field" />
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Category:
+                        <input id="entry-category" type="text" class="input-field" />
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Priority:
+                        <select id="entry-priority" class="input-field">
+                            <option value="3">Top Priority</option>
+                            <option value="2">Nice-to-Have</option>
+                            <option value="1">Optional</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Value:
+                        <input id="entry-value" type="number" min="0" max="10" step="0.1" class="input-field" />
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Description:
+                        <textarea id="entry-description" class="textarea-field"></textarea>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Link:
+                        <input id="entry-link" type="text" class="input-field" />
+                    </label>
+                </div>
+                <button id="copy-to-clipboard" class="btn btn-full">Copy To Clipboard</button>
             </div>
-            <div>
-                <label>Category: <input id="entry-category" type="text" style="width: 100%; margin-bottom: 10px;" /></label>
-            </div>
-            <div>
-                <label>Priority:
-                    <select id="entry-priority" style="width: 100%; margin-bottom: 10px;">
-                        <option value="3">Top Priority</option>
-                        <option value="2">Nice-to-Have</option>
-                        <option value="1">Optional</option>
-                    </select>
-                </label>
-            </div>
-            <div>
-                <label>Value: <input id="entry-value" type="number" min="0" max="10" step="0.1" style="width: 100%; margin-bottom: 10px;" /></label>
-            </div>
-            <div>
-                <label>Description: <textarea id="entry-description" style="width: 100%; margin-bottom: 10px;"></textarea></label>
-            </div>
-            <div>
-                <label>Link: <input id="entry-link" type="text" style="width: 100%; margin-bottom: 10px;" /></label>
-            </div>
-            <button id="copy-to-clipboard" style="padding: 10px; width: 100%;">Copy To Clipboard</button>
-        </div>
     `;
 
         // Populate category filter
