@@ -5,7 +5,8 @@
         "priority": 3,
         "value": 9.2,
         "description": "Amazing story, next Wall-E!",
-        "link": "https://example.com/wild-robot"
+        "link": "https://example.com/wild-robot",
+        "timestamp": "2024-12-01T18:21:36.505Z"
     },
     {
         "name": "Journal 3",
@@ -13,7 +14,8 @@
         "priority": 3,
         "value": 8.1,
         "description": "Fascinating lore, collectible.",
-        "link": "https://example.com/journal-3"
+        "link": "https://example.com/journal-3",
+        "timestamp": "2024-12-01T18:22:10.828Z"
     },
     {
         "name": "Budget Cuts VR",
@@ -21,6 +23,7 @@
         "priority": 2,
         "value": 9,
         "description": "Great VR gameplay.",
-        "link": "https://example.com/budget-cuts"
+        "link": "https://example.com/budget-cuts",
+        "timestamp": "2024-12-01T18:21:52.021Z"
     }
 ]
