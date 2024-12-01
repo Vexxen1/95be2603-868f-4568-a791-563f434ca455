@@ -1,7 +1,7 @@
 const getCurrentTimestamp = () => {
     return new Date().toISOString();
 };
-
+ 
 // Global variable to store the wishlist data
 let wishlist = [];
 
