@@ -274,8 +274,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Sort the wishlist by priority
             wishlist = wishlist.sortWishlistEntriesByPriority('Up');
 
-            // Save the updated wishlist to clipboard
-            navigator.clipboard.writeText(JSON.stringify(wishlist, null, 4))
+            // Create the new formatted JSON object
+            const updatedData = {
+                changelog: changelog, // You can populate this field dynamically if needed
+                data: wishlist, // Use the updated wishlist as the data array
+            };
+
+            // Save the updated JSON object to clipboard
+            navigator.clipboard.writeText(JSON.stringify(updatedData, null, 4))
                 .then(() => alert('Updated wishlist saved to instance and copied to clipboard!'))
                 .catch(() => alert('Failed to copy updated wishlist to clipboard.'));
 
