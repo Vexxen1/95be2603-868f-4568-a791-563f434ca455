@@ -143,3 +143,31 @@ label {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Timestamp Styling */
+.timestamp {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Changelog Container */
+.changelog-container {
+    max-height: 600px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Changelog Content */
+.changelog-content {
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    white-space: pre-line;
+    color: #333;
+}
