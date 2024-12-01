@@ -1,5 +1,5 @@
 {
-    "changelog": "22024-12-01 - Added 'Five Nights at Freddy's: The Week Before - Optional - 2.5/10'\n024-12-01 - Adding Links",
+    "changelog": "2024-12-01 - Added 'Five Nights at Freddy's: The Week Before - Optional - 2.5/10'\n2024-12-01 - Adding Links",
     "data": [
         {
             "name": "The Wild Robot Movie",
@@ -8,7 +8,7 @@
             "value": 8,
             "description": "Fucking amazing movie, we would all love it, the next fucking wall-E. Nice physical copies available.",
             "link": "https://www.amazon.com/Wild-Robot-UHD-Blu-ray-Digital/dp/B0DGY4LZXC",
-            "timestamp": "2024-12-01T21:55:13.931Z"
+            "timestamp": "2024-12-01T22:33:24.023Z"
         },
         {
             "name": "Book of Bill",
@@ -34,8 +34,8 @@
             "priority": 3,
             "value": 4,
             "description": "I like the games. Has good modding, VR is fucking cool. Yeah. Not sure how much i will play it thou. As im finding if its not minecraft, its best to have a set ending, otherwise i get board.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://store.steampowered.com/sub/199943/",
+            "timestamp": "2024-12-01T22:20:34.194Z"
         },
         {
             "name": "Personal Server",
@@ -70,8 +70,8 @@
             "priority": 2,
             "value": 8,
             "description": "I don't like my current one in the closet that well. I measured and found this one fits well.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://www.amazon.com/TaoHFE-Dresser-Bedroom-Cloakroom-Entryway/dp/B0C331ZRMJ/ref=sr_1_7?keywords=dresser%2B30%2Binch%2Bwide%2B45%2Binch%2Btall&sr=8-7&th=1",
+            "timestamp": "2024-12-01T22:29:50.533Z"
         },
         {
             "name": "All of Adventure Time",
@@ -101,24 +101,6 @@
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "PC Patricks Parabox",
-            "category": "Video Games & Programs",
-            "priority": 2,
-            "value": 6,
-            "description": "Cool puzzle game. Set ending. Nice.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Decorative Projector",
-            "category": "Physical Things",
-            "priority": 2,
-            "value": 6,
-            "description": "Would be better than star stickers on the walls, that's for sure.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
             "name": "Wolf Walkers",
             "category": "Movies & TV shows",
             "priority": 2,
@@ -137,6 +119,24 @@
             "timestamp": "2024-12-01T21:59:42.311Z"
         },
         {
+            "name": "PC Patricks Parabox",
+            "category": "Video Games & Programs",
+            "priority": 2,
+            "value": 6,
+            "description": "Cool puzzle game. Set ending. Nice.",
+            "link": "https://store.steampowered.com/app/1260520/Patricks_Parabox/",
+            "timestamp": "2024-12-01T22:21:29.735Z"
+        },
+        {
+            "name": "Decorative Projector",
+            "category": "Physical Things",
+            "priority": 2,
+            "value": 6,
+            "description": "Would be better than star stickers on the walls, that's for sure.",
+            "link": "https://www.amazon.com/Projector-Orzorz-Planetarium-Rechargeable-Presentation/dp/B0B1ZRVDC1/ref=sr_1_11?keywords=realistic%2Bstar%2Bprojector%2Bfor%2Bbedroom&sr=8-11&th=1",
+            "timestamp": "2024-12-01T22:32:16.926Z"
+        },
+        {
             "name": "All Harry Potter Movies",
             "category": "Movies & TV shows",
             "priority": 2,
@@ -151,8 +151,8 @@
             "priority": 2,
             "value": 5,
             "description": "A nice mug.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://www.youtube.com/@NileRed/store",
+            "timestamp": "2024-12-01T22:29:22.887Z"
         },
         {
             "name": "Gravity Falls season 1, and 2",
@@ -236,15 +236,6 @@
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "Nilered",
-            "category": "Physical Things",
-            "priority": 1,
-            "value": 6,
-            "description": "Clothes no. But cool things, yes.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
             "name": "Leo (2024) Movie",
             "category": "Movies & TV shows",
             "priority": 1,
@@ -254,13 +245,13 @@
             "timestamp": "2024-12-01T22:00:50.750Z"
         },
         {
-            "name": "PC 4D Golf",
-            "category": "Video Games & Programs",
+            "name": "Nilered",
+            "category": "Physical Things",
             "priority": 1,
-            "value": 5,
-            "description": "Puzzle, and golf. What more can i ask for?",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "value": 6,
+            "description": "Clothes no. But cool things, yes.",
+            "link": "https://www.youtube.com/@NileRed/store",
+            "timestamp": "2024-12-01T22:31:29.283Z"
         },
         {
             "name": "Heroes Seasons 1-4 (TV Show)",
@@ -281,20 +272,20 @@
             "timestamp": "2024-12-01T22:03:54.884Z"
         },
         {
+            "name": "PC 4D Golf",
+            "category": "Video Games & Programs",
+            "priority": 1,
+            "value": 5,
+            "description": "Puzzle, and golf. What more can i ask for?",
+            "link": "https://store.steampowered.com/app/2147950/4D_Golf/",
+            "timestamp": "2024-12-01T22:22:09.616Z"
+        },
+        {
             "name": "Phineas & Ferb, all seasons, hard copies",
             "category": "Movies & TV shows",
             "priority": 1,
             "value": 4,
             "description": "Nostalgia, Cool. Want it for my collection.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "PC Ark: Survival Evolved",
-            "category": "Video Games & Programs",
-            "priority": 1,
-            "value": 4,
-            "description": "Eh, cool game I guess.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
@@ -309,24 +300,6 @@
         },
         {
             "name": "FNAF Shirts",
-            "category": "Physical Things",
-            "priority": 1,
-            "value": 4,
-            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Game Theory Shirts/Merch",
-            "category": "Physical Things",
-            "priority": 1,
-            "value": 4,
-            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Kurskusart Shirts/Merch",
             "category": "Physical Things",
             "priority": 1,
             "value": 4,
@@ -353,31 +326,40 @@
             "timestamp": "2024-12-01T22:02:16.075Z"
         },
         {
+            "name": "PC Ark: Survival Evolved",
+            "category": "Video Games & Programs",
+            "priority": 1,
+            "value": 4,
+            "description": "Eh, cool game I guess.",
+            "link": "https://store.steampowered.com/bundle/21105/ARK_Ultimate_Survivor_Edition/",
+            "timestamp": "2024-12-01T22:22:46.288Z"
+        },
+        {
+            "name": "Game Theory Shirts/Merch",
+            "category": "Physical Things",
+            "priority": 1,
+            "value": 4,
+            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
+            "link": "https://theorywear.com/collections/all",
+            "timestamp": "2024-12-01T22:30:15.284Z"
+        },
+        {
+            "name": "Kurskusart Shirts/Merch",
+            "category": "Physical Things",
+            "priority": 1,
+            "value": 4,
+            "description": "Clothes na, i have plenty. Objects, or decorations. Sure, a 5.",
+            "link": "https://shop-us.kurzgesagt.org/",
+            "timestamp": "2024-12-01T22:30:58.614Z"
+        },
+        {
             "name": "PC Eco",
             "category": "Video Games & Programs",
             "priority": 1,
             "value": 3.5,
             "description": "Eh, cool game I guess.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "VR Boneworks",
-            "category": "Video Games & Programs",
-            "priority": 1,
-            "value": 3,
-            "description": "Cool, has a ending. Fun gameplay. VR. No body changing 🙁. But whatever.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "Hyperbolica",
-            "category": "Video Games & Programs",
-            "priority": 1,
-            "value": 3,
-            "description": "Eh, cool game I guess.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://store.steampowered.com/app/382310/Eco/",
+            "timestamp": "2024-12-01T22:24:29.374Z"
         },
         {
             "name": "FNAF Ultimate Guide",
@@ -398,6 +380,24 @@
             "timestamp": "2024-12-01T22:14:43.368Z"
         },
         {
+            "name": "VR Boneworks",
+            "category": "Video Games & Programs",
+            "priority": 1,
+            "value": 3,
+            "description": "Cool, has a ending. Fun gameplay. VR. No body changing 🙁. But whatever.",
+            "link": "https://store.steampowered.com/app/823500/BONEWORKS/",
+            "timestamp": "2024-12-01T22:25:01.507Z"
+        },
+        {
+            "name": "Hyperbolica",
+            "category": "Video Games & Programs",
+            "priority": 1,
+            "value": 3,
+            "description": "Eh, cool game I guess.",
+            "link": "https://store.steampowered.com/app/1256230/Hyperbolica/",
+            "timestamp": "2024-12-01T22:26:51.662Z"
+        },
+        {
             "name": "Five Nights at Freddy's: The Week Before",
             "category": "Hardback Books",
             "priority": 1,
@@ -412,8 +412,8 @@
             "priority": 1,
             "value": 2,
             "description": "Good for exercise, and fun sporty game. Beat saber is cool, so is this.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://store.steampowered.com/app/890550/RUMBLE/",
+            "timestamp": "2024-12-01T22:27:12.521Z"
         },
         {
             "name": "Missing Space Engineers DLC: 1, 2, 3, 4",
@@ -421,8 +421,8 @@
             "priority": 1,
             "value": 0.25,
             "description": "I don't have them. I collect them. Whatever. Make sure to cheak for more DLC i do not have, i don’t remember what i don’t have.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://store.steampowered.com/app/2504720/Space_Engineers__Decorative_Pack_3/?curator_clanid=5134093",
+            "timestamp": "2024-12-01T22:28:00.953Z"
         }
     ]
 }
