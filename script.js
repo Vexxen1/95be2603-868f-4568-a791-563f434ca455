@@ -63,4 +63,27 @@ fetch('wishlist.json')
 
         document.getElementById('sort-date').addEventListener('click', () => {
             currentSort = currentSort === 'date' ? '-date' : 'date';
-            filteredData.sort((a, b) => currentSort === 'date' ?
+            filteredData.sort((a, b) => currentSort === 'date' ? b.dateAdded - a.dateAdded : a.dateAdded - b.dateAdded);
+            renderWishlist();
+        });
+
+        document.getElementById('sort-alpha').addEventListener('click', () => {
+            currentSort = currentSort === 'alpha' ? '-alpha' : 'alpha';
+            filteredData.sort((a, b) => currentSort === 'alpha' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
+            renderWishlist();
+        });
+
+        // Navigation
+        viewListButton.addEventListener('click', () => {
+            viewListSection.style.display = 'block';
+            changelogSection.style.display = 'none';
+        });
+
+        changelogButton.addEventListener('click', () => {
+            viewListSection.style.display = 'none';
+            changelogSection.style.display = 'block';
+        });
+
+        // Initial render
+        renderWishlist();
+    });
