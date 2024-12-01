@@ -145,12 +145,38 @@ const loadViewList = () => {
     // Populate category filter
     const categoryFilter = document.getElementById('category-filter');
     const categories = [...new Set(wishlist.map(item => item.category))];
+    // Clear existing options
+    categoryFilter.innerHTML = ''; 
+
     categories.forEach(category => {
-        const option = document.createElement('option');
-        option.value = category;
+        const container = document.createElement('div');
+        container.style.display = 'flex';
+        container.style.justifyContent = 'space-between';
+        container.style.alignItems = 'center';
+
+        const option = document.createElement('div');
         option.textContent = category;
-        categoryFilter.appendChild(option);
+        option.style.flex = '1';
+
+        const copyButton = document.createElement('span');
+        copyButton.textContent = 'Copy';
+        copyButton.style.color = '#007bff';
+        copyButton.style.cursor = 'pointer';
+        copyButton.style.marginLeft = '10px';
+        copyButton.style.fontSize = '14px';
+        copyButton.style.textDecoration = 'underline';
+
+        copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(category)
+                .then(() => alert(`Copied category: ${category}`))
+                .catch(() => alert('Failed to copy category.'));
+        });
+
+        container.appendChild(option);
+        container.appendChild(copyButton);
+        categoryFilter.appendChild(container);
     });
+
 
     const renderWishlist = (items) => {
         const wishlistContainer = document.getElementById('wishlist-items');
