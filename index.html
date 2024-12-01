@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wishlist</title>
+    <title>Christmas Wishlist</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="app">
-        <!-- Main Navigation -->
-        <div id="navigation">
-            <button id="view-list-button">View List</button>
-            <button id="changelog-button">Changelog</button>
+    <div id="container">
+        <div id="header">
+            <button id="view-list-btn" class="nav-btn">View List</button>
+            <button id="changelog-btn" class="nav-btn">Changelog</button>
         </div>
 
-        <!-- View List Section -->
-        <div id="view-list-section">
+        <div id="view-list-section" style="display: none;">
             <div id="controls">
                 <select id="category-filter" multiple>
-                    <option value="All">All Categories</option>
+                    <!-- Categories will auto-fill here -->
                 </select>
-                <div id="sort-controls">
-                    <button id="sort-priority">Sort by Priority [Highest]</button>
-                    <button id="sort-date">Sort by Date [Newest]</button>
-                    <button id="sort-alpha">Sort by Name [A-Z]</button>
-                </div>
+                <button id="sort-priority-highest">Sort by Priority [Highest]</button>
+                <button id="sort-priority-lowest">Sort by Priority [Lowest]</button>
+                <button id="sort-newest">Sort by Most Recently Changed/Added [Newest]</button>
+                <button id="sort-oldest">Sort by Most Recently Changed/Added [Oldest]</button>
+                <button id="sort-az">Sort [A-Z]</button>
+                <button id="sort-za">Sort [Z-A]</button>
             </div>
-            <div id="wishlist-container"></div>
+
+            <div id="wishlist" class="scrollable-list">
+                <!-- Items will be dynamically added here -->
+            </div>
         </div>
 
-        <!-- Changelog Section -->
         <div id="changelog-section" style="display: none;">
-            <div id="changelog">
-                <textarea id="changelog-text" placeholder="Edit changelog here..."></textarea>
-            </div>
+            <textarea id="changelog-text" class="scrollable-text" placeholder="Edit the changelog here..."></textarea>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
