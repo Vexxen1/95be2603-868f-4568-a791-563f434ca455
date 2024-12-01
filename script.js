@@ -251,10 +251,10 @@ document.addEventListener('DOMContentLoaded', () => {
         `; // Example changelog content
 
         contentDiv.innerHTML = `
-            <h2>Changelog</h2>
-            <p><strong>Current Timestamp:</strong> ${currentTimestamp}</p>
-            <div style="margin-top: 20px; padding: 10px; background: #f4f4f4; border-radius: 5px; font-family: monospace; white-space: pre-line;">
-                ${changelogContent}
+            <h2 class="section-title">Changelog</h2>
+            <p class="timestamp"><strong>Current Timestamp:</strong> ${currentTimestamp}</p>
+            <div class="changelog-container">
+                <pre class="changelog-content">${changelogContent}</pre>
             </div>
         `;
     };
