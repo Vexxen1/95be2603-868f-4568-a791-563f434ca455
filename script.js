@@ -77,27 +77,94 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to load View List
     const loadViewList = () => {
-        contentDiv.innerHTML = '<h2>View List</h2>';
+        contentDiv.innerHTML = `
+            <h2>View List</h2>
+            <div id="controls" style="margin-bottom: 20px;">
+                <select id="category-filter" multiple style="width: 200px; padding: 10px; font-size: 16px;">
+                    <option value="All" selected>All Categories</option>
+                </select>
+                <button id="sort-priority-high" style="margin: 0 10px; padding: 10px;">Sort by Priority: Highest</button>
+                <button id="sort-priority-low" style="margin: 0 10px; padding: 10px;">Sort by Priority: Lowest</button>
+                <button id="sort-timestamp-newest" style="margin: 0 10px; padding: 10px;">Sort by Newest</button>
+                <button id="sort-timestamp-oldest" style="margin: 0 10px; padding: 10px;">Sort by Oldest</button>
+                <button id="sort-az" style="margin: 0 10px; padding: 10px;">Sort A-Z</button>
+                <button id="sort-za" style="margin: 0 10px; padding: 10px;">Sort Z-A</button>
+            </div>
+            <div id="wishlist-items" style="max-height: 600px; overflow-y: auto;"></div>
+        `;
 
-        if (wishlist.length > 0) {
-            const entry = getWishlistEntry(0); // Get the first entry
-            if (entry) {
-                const entryHTML = `
-                    <div>
-                        <h3><a href="${entry.getLink()}" target="_blank" style="color: blue;">${entry.getName()}</a></h3>
-                        <p><strong>Category:</strong> ${entry.getCategory()}</p>
-                        <p><strong>Priority:</strong> ${entry.getPriority()}</p>
-                        <p><strong>Value:</strong> ${entry.getValue()}</p>
-                        <p><strong>Description:</strong> ${entry.getDescription()}</p>
+        // Populate category filter
+        const categoryFilter = document.getElementById('category-filter');
+        const categories = [...new Set(wishlist.map(item => item.category))];
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category;
+            categoryFilter.appendChild(option);
+        });
+
+        const renderWishlist = (items) => {
+            const wishlistContainer = document.getElementById('wishlist-items');
+            wishlistContainer.innerHTML = '';
+            items.forEach((item, index) => {
+                const boxColor = item.priority === 3
+                    ? 'red'
+                    : item.priority === 2
+                    ? 'yellow'
+                    : 'gray';
+                wishlistContainer.innerHTML += `
+                    <div style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
+                        <h3 style="margin: 0;">
+                            <a href="${item.link}" target="_blank" style="color: blue;">${index + 1}. ${item.name}</a> - 
+                            <span style="color: ${boxColor};">${item.priority === 3 ? 'Top Priority' : item.priority === 2 ? 'Nice-to-Have' : 'Optional'}</span> - ${item.value}/10
+                        </h3>
+                        <p style="margin: 5px 0;">${item.description}</p>
                     </div>
                 `;
-                contentDiv.innerHTML += entryHTML;
-            } else {
-                contentDiv.innerHTML += '<p>No entry found at index 0.</p>';
-            }
-        } else {
-            contentDiv.innerHTML += '<p>Loading wishlist data...</p>';
-        }
+            });
+        };
+
+        // Initial render
+        renderWishlist(wishlist);
+
+        // Add event listeners for sorting and filtering
+        document.getElementById('sort-priority-high').addEventListener('click', () => {
+            const sorted = getAllWishlistEntries().sortWishlistEntriesByPriority('Up');
+            renderWishlist(sorted);
+        });
+
+        document.getElementById('sort-priority-low').addEventListener('click', () => {
+            const sorted = getAllWishlistEntries().sortWishlistEntriesByPriority('Down');
+            renderWishlist(sorted);
+        });
+
+        document.getElementById('sort-timestamp-newest').addEventListener('click', () => {
+            const sorted = getAllWishlistEntries().sortWishlistEntriesByTimestampNewest();
+            renderWishlist(sorted);
+        });
+
+        document.getElementById('sort-timestamp-oldest').addEventListener('click', () => {
+            const sorted = getAllWishlistEntries().sortWishlistEntriesByTimestampOldest();
+            renderWishlist(sorted);
+        });
+
+        document.getElementById('sort-az').addEventListener('click', () => {
+            const sorted = getAllWishlistEntries().sortWishlistEntriesByAZ();
+            renderWishlist(sorted);
+        });
+
+        document.getElementById('sort-za').addEventListener('click', () => {
+            const sorted = getAllWishlistEntries().sortWishlistEntriesByZA();
+            renderWishlist(sorted);
+        });
+
+        categoryFilter.addEventListener('change', () => {
+            const selectedCategories = Array.from(categoryFilter.selectedOptions).map(opt => opt.value);
+            const filtered = selectedCategories.includes('All')
+                ? wishlist
+                : wishlist.filter(item => selectedCategories.includes(item.category));
+            renderWishlist(filtered);
+        });
     };
 
     // Function to load Changelog
@@ -121,3 +188,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('view-list').addEventListener('click', loadViewList);
     document.getElementById('changelog').addEventListener('click', loadChangelog);
 });
+
