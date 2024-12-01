@@ -1,24 +1,16 @@
-// Load JSON data and initialize UI
+// Load JSON data and handle functionality
 fetch('wishlist.json')
     .then(response => response.json())
     .then(data => {
-        const wishlistContainer = document.getElementById('wishlist-container');
+        const wishlist = document.getElementById('wishlist');
         const categoryFilter = document.getElementById('category-filter');
-        const viewListButton = document.getElementById('view-list-button');
-        const changelogButton = document.getElementById('changelog-button');
+        const viewListBtn = document.getElementById('view-list-btn');
+        const changelogBtn = document.getElementById('changelog-btn');
         const viewListSection = document.getElementById('view-list-section');
         const changelogSection = document.getElementById('changelog-section');
 
-        let currentSort = 'priority'; // Default sort
-        let categories = ['All'];
-        let filteredData = data;
-
-        // Populate categories
-        data.forEach(item => {
-            if (!categories.includes(item.category)) {
-                categories.push(item.category);
-            }
-        });
+        // Populate category filter with unique categories from JSON data
+        const categories = [...new Set(data.map(item => item.category))];
         categories.forEach(category => {
             const option = document.createElement('option');
             option.value = category;
@@ -26,64 +18,54 @@ fetch('wishlist.json')
             categoryFilter.appendChild(option);
         });
 
-        // Render the wishlist
-        const renderWishlist = () => {
-            wishlistContainer.innerHTML = '';
-            filteredData.forEach((item, index) => {
-                const listItem = document.createElement('div');
+        // Function to display items
+        const displayItems = (items) => {
+            wishlist.innerHTML = '';
+            items.forEach((item, index) => {
+                const listItem = document.createElement('li');
                 listItem.classList.add('wishlist-item');
-                const priorityClass =
-                    item.priority === 3 ? 'priority-high' :
-                    item.priority === 2 ? 'priority-medium' : 'priority-low';
                 listItem.innerHTML = `
-                    <a href="${item.link}" target="_blank">${index + 1}. ${item.name}</a> -
-                    <span class="priority ${priorityClass}">${item.priority === 3 ? 'Top Priority' : item.priority === 2 ? 'Nice-to-Have' : 'Optional'}</span> -
-                    <span>${item.value}/10</span>
-                    <p>${item.description}</p>
+                    <a href="${item.link}" target="_blank">${index + 1}. ${item.name}</a> - 
+                    <span class="${item.priority === 3 ? 'priority-high' : item.priority === 2 ? 'priority-medium' : 'priority-low'}">
+                    ${item.priority === 3 ? 'Top Priority' : item.priority === 2 ? 'Nice-to-Have' : 'Optional'}
+                    </span> - ${item.value}/10
+                    <div>${item.description}</div>
                 `;
-                wishlistContainer.appendChild(listItem);
+                wishlist.appendChild(listItem);
             });
         };
 
-        // Filter by category
-        categoryFilter.addEventListener('change', () => {
-            const selectedCategories = Array.from(categoryFilter.selectedOptions).map(option => option.value);
-            filteredData = data.filter(item =>
-                selectedCategories.includes('All') || selectedCategories.includes(item.category)
-            );
-            renderWishlist();
-        });
+        // Initial display of items
+        displayItems(data);
 
-        // Sort handlers
-        document.getElementById('sort-priority').addEventListener('click', () => {
-            currentSort = currentSort === 'priority' ? '-priority' : 'priority';
-            filteredData.sort((a, b) => currentSort === 'priority' ? b.priority - a.priority : a.priority - b.priority);
-            renderWishlist();
-        });
+        // Sorting functions
+        const sortItems = (criteria, direction) => {
+            let sortedItems = [...data];
+            sortedItems.sort((a, b) => {
+                if (criteria === 'priority' || criteria === 'value') {
+                    return direction === 'asc' ? a[criteria] - b[criteria] : b[criteria] - a[criteria];
+                } else {
+                    return direction === 'asc' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+                }
+            });
+            displayItems(sortedItems);
+        };
 
-        document.getElementById('sort-date').addEventListener('click', () => {
-            currentSort = currentSort === 'date' ? '-date' : 'date';
-            filteredData.sort((a, b) => currentSort === 'date' ? b.dateAdded - a.dateAdded : a.dateAdded - b.dateAdded);
-            renderWishlist();
-        });
+        // Event listeners for sorting buttons
+        document.getElementById('sort-priority-highest').addEventListener('click', () => sortItems('priority', 'desc'));
+        document.getElementById('sort-priority-lowest').addEventListener('click', () => sortItems('priority', 'asc'));
+        document.getElementById('sort-az').addEventListener('click', () => sortItems('name', 'asc'));
+        document.getElementById('sort-za').addEventListener('click', () => sortItems('name', 'desc'));
 
-        document.getElementById('sort-alpha').addEventListener('click', () => {
-            currentSort = currentSort === 'alpha' ? '-alpha' : 'alpha';
-            filteredData.sort((a, b) => currentSort === 'alpha' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
-            renderWishlist();
-        });
-
-        // Navigation
-        viewListButton.addEventListener('click', () => {
+        // Toggle view between sections
+        viewListBtn.addEventListener('click', () => {
             viewListSection.style.display = 'block';
             changelogSection.style.display = 'none';
         });
 
-        changelogButton.addEventListener('click', () => {
-            viewListSection.style.display = 'none';
+        changelogBtn.addEventListener('click', () => {
             changelogSection.style.display = 'block';
+            viewListSection.style.display = 'none';
         });
 
-        // Initial render
-        renderWishlist();
     });
