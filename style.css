@@ -1,30 +1,109 @@
-#controls {
-    display: flex;
-    gap: 10px;
-    margin: 20px;
-    justify-content: center;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
 }
 
-#search-bar, #category-filter {
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#navigation {
+    margin: 20px 0;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+#category-filter {
     padding: 10px;
     font-size: 16px;
 }
 
-#wishlist {
-    list-style: none;
-    padding: 0;
-}
-
-#wishlist li {
+#wishlist-container {
+    max-height: 600px;
+    overflow-y: auto;
+    margin: 20px 0;
     padding: 10px;
-    border: 1px solid #ddd;
-    margin: 10px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#wishlist a {
+.wishlist-item {
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.wishlist-item a {
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
+}
+
+.wishlist-item a:hover {
+    text-decoration: underline;
+}
+
+.wishlist-item .priority {
+    font-weight: bold;
+}
+
+.priority-high {
+    color: red;
+}
+
+.priority-medium {
+    color: orange;
+}
+
+.priority-low {
+    color: green;
+}
+
+#changelog {
+    margin: 20px auto;
+    max-width: 700px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#changelog textarea {
+    width: 100%;
+    height: 500px;
+    background: black;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
 }
