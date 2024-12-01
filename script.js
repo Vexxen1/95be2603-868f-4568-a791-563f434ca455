@@ -38,6 +38,23 @@ Array.prototype.sortWishlistEntriesByPriority = function (order) {
     });
 };
 
+Array.prototype.sortWishlistEntriesByTimestampNewest = function () {
+    return this.slice().sort((a, b) => {
+        const dateA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+        const dateB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+
+        return dateB - dateA; // Newest first
+    });
+};
+
+Array.prototype.sortWishlistEntriesByTimestampOldest = function () {
+    return this.slice().sort((a, b) => {
+        const dateA = a.timestamp ? new Date(a.timestamp).getTime() : Infinity;
+        const dateB = b.timestamp ? new Date(b.timestamp).getTime() : Infinity;
+
+        return dateA - dateB; // Oldest first
+    });
+};
 Array.prototype.sortWishlistEntriesByAZ = function () {
     return this.slice().sort((a, b) => a.name.localeCompare(b.name));
 };
