@@ -1,5 +1,5 @@
 {
-    "changelog": "- Adding Links",
+    "changelog": "22024-12-01 - Added 'Five Nights at Freddy's: The Week Before - Optional - 2.5/10'\n024-12-01 - Adding Links",
     "data": [
         {
             "name": "The Wild Robot Movie",
@@ -16,8 +16,8 @@
             "priority": 3,
             "value": 7.5,
             "description": "Fucking cool. Amazing collectors item. What more needs to be said.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://www.barnesandnoble.com/w/the-book-of-bill-alex-hirsch/1144490969",
+            "timestamp": "2024-12-01T22:10:36.881Z"
         },
         {
             "name": "Journal 3",
@@ -25,8 +25,8 @@
             "priority": 3,
             "value": 7.25,
             "description": "Fucking cool. Amazing collectors item. What more needs to be said.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://www.amazon.com/Gravity-Falls-Journal-Alex-Hirsch/dp/1484746694/ref=pd_sbs_d_sccl_1_1/147-3261503-5300414?pd_rd_w=y0GRa&content-id=amzn1.sym.156274ff-6322-443d-8bbf-ab3ed87e382f&pf_rd_p=156274ff-6322-443d-8bbf-ab3ed87e382f&pf_rd_r=MW1SC8YJMS6AM1FQRZNY&pd_rd_wg=m8edI&pd_rd_r=3a5ae761-f0d9-416d-9d7a-cbbc3fb5b49d&pd_rd_i=1484746694&psc=1",
+            "timestamp": "2024-12-01T22:11:19.109Z"
         },
         {
             "name": "PC Fallout 4 + Fallout VR + Fallout DLC",
@@ -178,8 +178,8 @@
             "priority": 2,
             "value": 2.5,
             "description": "Need the last book in the series, i have Silver Eyes, and Twisted Ones. Get graphic novel versions.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://www.amazon.com/Five-Nights-at-Freddys-Collection/dp/1338323024",
+            "timestamp": "2024-12-01T22:11:57.548Z"
         },
         {
             "name": "All of Land of stories Books",
@@ -187,8 +187,8 @@
             "priority": 2,
             "value": 2.5,
             "description": "I read them all, but don’t have them all. I need them all… for my collection… heh",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://www.amazon.com/Land-Stories-Complete-Paperback-Gift/dp/0316480843/ref=asc_df_0316480843&mcid=7b8ad20765373ea0ad01199a9246b635?tag=bngsmtphsnus-20&linkCode=df0&hvadid=80127027919890&hvnetw=s&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4583726554013886&psc=1",
+            "timestamp": "2024-12-01T22:12:29.432Z"
         },
         {
             "name": "Tales from the Pizzaplex",
@@ -196,8 +196,8 @@
             "priority": 2,
             "value": 2,
             "description": "Eh… collectors item… but stories. So… cool i guess.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://www.amazon.com/Five-Nights-At-Freddys-Pizzaplex/dp/B0CG7THP63/ref=pd_bxgy_d_sccl_2/147-3261503-5300414?pd_rd_w=bbbeT&content-id=amzn1.sym.f7fa8b58-6436-47b8-8741-9e90c231669e&pf_rd_p=f7fa8b58-6436-47b8-8741-9e90c231669e&pf_rd_r=PT960YJ4W45W9SMQ0VN0&pd_rd_wg=HNX3B&pd_rd_r=7f8bf017-bf8c-4d4c-9ec5-a427c61f81c1&pd_rd_i=B0CG7THP63&psc=1",
+            "timestamp": "2024-12-01T22:12:53.824Z"
         },
         {
             "name": "Fazbear Frights",
@@ -205,8 +205,8 @@
             "priority": 2,
             "value": 2,
             "description": "Eh… collectors item… but stories. So… cool i guess.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
+            "link": "https://www.amazon.com/dp/2020071878/ref=mes-dp?_encoding=UTF8&pd_rd_w=cyakc&content-id=amzn1.sym.8415a01e-1baa-464d-812f-f520c2d46a10&pf_rd_p=8415a01e-1baa-464d-812f-f520c2d46a10&pf_rd_r=Q9HGAQM26GCAZQE1NZQK&pd_rd_wg=ocBQE&pd_rd_r=574403c4-d3cf-41fc-9aef-87c4dd2ebd28",
+            "timestamp": "2024-12-01T22:13:22.037Z"
         },
         {
             "name": "Emperor’s New Groove",
@@ -362,24 +362,6 @@
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
         {
-            "name": "FNAF Ultimate Guide",
-            "category": "Hardback Books",
-            "priority": 1,
-            "value": 3,
-            "description": "Eh… collectors item.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "FNAF Character Encyclopedia",
-            "category": "Hardback Books",
-            "priority": 1,
-            "value": 3,
-            "description": "Eh… collectors item.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
             "name": "VR Boneworks",
             "category": "Video Games & Programs",
             "priority": 1,
@@ -396,6 +378,33 @@
             "description": "Eh, cool game I guess.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "FNAF Ultimate Guide",
+            "category": "Hardback Books",
+            "priority": 1,
+            "value": 3,
+            "description": "Eh… collectors item.",
+            "link": "https://www.amazon.com/Freddy-Files-Ultimate-Freddys-tie/dp/1338767682?tag=bngsmtphsnus-20&linkCode=df0&hvadid=80127027724183&hvnetw=s&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4583726554081633&psc=1",
+            "timestamp": "2024-12-01T22:14:16.306Z"
+        },
+        {
+            "name": "FNAF Character Encyclopedia",
+            "category": "Hardback Books",
+            "priority": 1,
+            "value": 3,
+            "description": "Eh… collectors item.",
+            "link": "https://www.amazon.com/Freddys-Character-Encyclopedia-Fiercely-Friends/dp/1338804731/ref=pd_bxgy_d_sccl_1/147-3261503-5300414?pd_rd_w=nupDH&content-id=amzn1.sym.f7fa8b58-6436-47b8-8741-9e90c231669e&pf_rd_p=f7fa8b58-6436-47b8-8741-9e90c231669e&pf_rd_r=PFSED9SY5NNW49K51W1H&pd_rd_wg=WN1dB&pd_rd_r=13a9a472-3ad1-4dd5-95cd-5ba4bbf22241&pd_rd_i=1338804731&psc=1",
+            "timestamp": "2024-12-01T22:14:43.368Z"
+        },
+        {
+            "name": "Five Nights at Freddy's: The Week Before",
+            "category": "Hardback Books",
+            "priority": 1,
+            "value": 2.5,
+            "description": "Eh… collectors item… but choose your own adventure. So… cool I guess",
+            "link": "https://www.amazon.com/dp/1546131116",
+            "timestamp": "2024-12-01T22:16:21.044Z"
         },
         {
             "name": "Rumbe(VR)",
