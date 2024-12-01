@@ -114,9 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="form-group">
                     <label>Priority:
                         <select id="entry-priority" class="input-field">
-                            <option value="3">Top Priority</option>
-                            <option value="2">Nice-to-Have</option>
-                            <option value="1">Optional</option>
+                            <option value="3" data-color="red">Top Priority</option>
+                            <option value="2" data-color="yellow">Nice-to-Have</option>
+                            <option value="1" data-color="gray">Optional</option>
                         </select>
                     </label>
                 </div>
