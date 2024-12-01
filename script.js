@@ -145,38 +145,12 @@ const loadViewList = () => {
     // Populate category filter
     const categoryFilter = document.getElementById('category-filter');
     const categories = [...new Set(wishlist.map(item => item.category))];
-    // Clear existing options
-    categoryFilter.innerHTML = ''; 
-
     categories.forEach(category => {
-        const container = document.createElement('div');
-        container.style.display = 'flex';
-        container.style.justifyContent = 'space-between';
-        container.style.alignItems = 'center';
-
-        const option = document.createElement('div');
+        const option = document.createElement('option');
+        option.value = category;
         option.textContent = category;
-        option.style.flex = '1';
-
-        const copyButton = document.createElement('span');
-        copyButton.textContent = 'Copy';
-        copyButton.style.color = '#007bff';
-        copyButton.style.cursor = 'pointer';
-        copyButton.style.marginLeft = '10px';
-        copyButton.style.fontSize = '14px';
-        copyButton.style.textDecoration = 'underline';
-
-        copyButton.addEventListener('click', () => {
-            navigator.clipboard.writeText(category)
-                .then(() => alert(`Copied category: ${category}`))
-                .catch(() => alert('Failed to copy category.'));
-        });
-
-        container.appendChild(option);
-        container.appendChild(copyButton);
-        categoryFilter.appendChild(container);
+        categoryFilter.appendChild(option);
     });
-
 
     const renderWishlist = (items) => {
         const wishlistContainer = document.getElementById('wishlist-items');
@@ -312,7 +286,6 @@ const loadViewList = () => {
 
         contentDiv.innerHTML = `
             <h2 class="section-title">Changelog</h2>
-            <p class="timestamp"><strong>Current Timestamp:</strong> ${currentTimestamp}</p>
             <div class="changelog-container">
                 <pre class="changelog-content">${changelogContent}</pre>
             </div>
