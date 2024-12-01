@@ -1,3 +1,7 @@
+const getCurrentTimestamp = () => {
+    return new Date().toISOString();
+};
+
 // Global variable to store the wishlist data
 let wishlist = [];
 
@@ -12,6 +16,7 @@ const getWishlistEntry = (index) => {
             getValue: () => entry.value,
             getDescription: () => entry.description,
             getLink: () => entry.link,
+            getTimestamp: () => entry.timestamp,
         };
     }
     return null; // Return null if index is out of range
@@ -33,6 +38,13 @@ Array.prototype.sortWishlistEntriesByPriority = function (order) {
     });
 };
 
+Array.prototype.sortWishlistEntriesByAZ = function () {
+    return this.slice().sort((a, b) => a.name.localeCompare(b.name));
+};
+
+Array.prototype.sortWishlistEntriesByZA = function () {
+    return this.slice().sort((a, b) => b.name.localeCompare(a.name));
+};
 // Fetch wishlist data when the page loads
 fetch('wishlist.json')
     .then(response => response.json())
@@ -73,9 +85,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to load Changelog
     const loadChangelog = () => {
+        const currentTimestamp = getCurrentTimestamp(); // Generate the current timestamp
+        const changelogContent = `
+            - 2024-12-01T12:00:00Z: Added "The Wild Robot Movie" to the list.
+            - 2024-11-30T15:30:00Z: Updated "Journal 3" description.
+        `; // Example changelog content
+
         contentDiv.innerHTML = `
             <h2>Changelog</h2>
-            <p>This section will display the changelog. Content is coming soon!</p>
+            <p><strong>Current Timestamp:</strong> ${currentTimestamp}</p>
+            <div style="margin-top: 20px; padding: 10px; background: #f4f4f4; border-radius: 5px; font-family: monospace; white-space: pre-line;">
+                ${changelogContent}
+            </div>
         `;
     };
 
