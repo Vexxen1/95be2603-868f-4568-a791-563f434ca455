@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             wishlistContainer.innerHTML = '';
             items.forEach((item, index) => {
                 const boxColor = item.priority === 3 ? 'red' :
-                    item.priority === 2 ? 'yellow' : 'gray';
+                    item.priority === 2 ? 'orange' : 'gray';
 
                 const hasValidLink = item.link && item.link.trim() !== '' && item.link !== 'entity';
 
