@@ -55,3 +55,39 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* Styling for category selection bubbles */
+#category-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#category-container .bubble {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+#category-container .bubble span {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#category-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    min-width: 150px;
+}
