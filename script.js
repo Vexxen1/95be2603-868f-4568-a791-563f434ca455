@@ -83,14 +83,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 <select id="category-filter" multiple style="width: 200px; padding: 10px; font-size: 16px;">
                     <option value="All" selected>All Categories</option>
                 </select>
-                <button id="sort-priority-high" style="margin: 0 10px; padding: 10px;">Sort by Highest Priority</button>
-                <button id="sort-priority-low" style="margin: 0 10px; padding: 10px;">Sort by Lowest Priority</button>
+                <button id="sort-priority-high" style="margin: 0 10px; padding: 10px;">Sort by Priority: Highest</button>
+                <button id="sort-priority-low" style="margin: 0 10px; padding: 10px;">Sort by Priority: Lowest</button>
                 <button id="sort-timestamp-newest" style="margin: 0 10px; padding: 10px;">Sort by Newest</button>
                 <button id="sort-timestamp-oldest" style="margin: 0 10px; padding: 10px;">Sort by Oldest</button>
                 <button id="sort-az" style="margin: 0 10px; padding: 10px;">Sort A-Z</button>
                 <button id="sort-za" style="margin: 0 10px; padding: 10px;">Sort Z-A</button>
             </div>
-            <div id="wishlist-items" style="max-height: 600px; overflow-y: auto;"></div>
+            <div id="wishlist-items" style="max-height: 600px; overflow-y: auto; margin-bottom: 30px;"></div>
+            <div id="create-entry" style="padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
+                <h3>Create Entry</h3>
+                <div>
+                    <label>Name: <input id="entry-name" type="text" style="width: 100%; margin-bottom: 10px;" /></label>
+                </div>
+                <div>
+                    <label>Category: <input id="entry-category" type="text" style="width: 100%; margin-bottom: 10px;" /></label>
+                </div>
+                <div>
+                    <label>Priority:
+                        <select id="entry-priority" style="width: 100%; margin-bottom: 10px;">
+                            <option value="3">Top Priority</option>
+                            <option value="2">Nice-to-Have</option>
+                            <option value="1">Optional</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label>Value: <input id="entry-value" type="number" min="0" max="10" step="0.1" style="width: 100%; margin-bottom: 10px;" /></label>
+                </div>
+                <div>
+                    <label>Description: <textarea id="entry-description" style="width: 100%; margin-bottom: 10px;"></textarea></label>
+                </div>
+                <div>
+                    <label>Link: <input id="entry-link" type="text" style="width: 100%; margin-bottom: 10px;" /></label>
+                </div>
+                <button id="copy-to-clipboard" style="padding: 10px; width: 100%;">Copy To Clipboard</button>
+            </div>
         `;
 
         // Populate category filter
@@ -103,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoryFilter.appendChild(option);
         });
 
+        // Render wishlist items
         const renderWishlist = (items) => {
             const wishlistContainer = document.getElementById('wishlist-items');
             wishlistContainer.innerHTML = '';
@@ -130,49 +159,39 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-
         // Initial render
         renderWishlist(wishlist);
 
-        // Add event listeners for sorting and filtering
-        document.getElementById('sort-priority-high').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByPriority('Up');
-            renderWishlist(sorted);
-        });
+        // Add functionality for "Copy To Clipboard"
+        document.getElementById('copy-to-clipboard').addEventListener('click', () => {
+            const name = document.getElementById('entry-name').value.trim();
+            const category = document.getElementById('entry-category').value.trim();
+            const priority = parseInt(document.getElementById('entry-priority').value, 10);
+            const value = parseFloat(document.getElementById('entry-value').value);
+            const description = document.getElementById('entry-description').value.trim();
+            const link = document.getElementById('entry-link').value.trim();
 
-        document.getElementById('sort-priority-low').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByPriority('Down');
-            renderWishlist(sorted);
-        });
+            if (!name || !category || isNaN(priority) || isNaN(value) || !description) {
+                alert('Please fill in all required fields.');
+                return;
+            }
 
-        document.getElementById('sort-timestamp-newest').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByTimestampNewest();
-            renderWishlist(sorted);
-        });
+            const entry = {
+                name,
+                category,
+                priority,
+                value,
+                description,
+                link: link || '', // Use an empty string if no link provided
+                timestamp: getCurrentTimestamp(),
+            };
 
-        document.getElementById('sort-timestamp-oldest').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByTimestampOldest();
-            renderWishlist(sorted);
-        });
-
-        document.getElementById('sort-az').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByAZ();
-            renderWishlist(sorted);
-        });
-
-        document.getElementById('sort-za').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByZA();
-            renderWishlist(sorted);
-        });
-
-        categoryFilter.addEventListener('change', () => {
-            const selectedCategories = Array.from(categoryFilter.selectedOptions).map(opt => opt.value);
-            const filtered = selectedCategories.includes('All')
-                ? wishlist
-                : wishlist.filter(item => selectedCategories.includes(item.category));
-            renderWishlist(filtered);
+            navigator.clipboard.writeText(JSON.stringify(entry, null, 4))
+                .then(() => alert('Entry copied to clipboard!'))
+                .catch(() => alert('Failed to copy entry to clipboard.'));
         });
     };
+
 
     // Function to load Changelog
     const loadChangelog = () => {
