@@ -1,44 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christmas Wishlist</title>
+    <title>Christmas List</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div id="container">
-        <div id="header">
-            <button id="view-list-btn" class="nav-btn">View List</button>
-            <button id="changelog-btn" class="nav-btn">Changelog</button>
-        </div>
-
-        <div id="view-list-section" style="display: none;">
-            <div id="controls">
-                <select id="category-filter" multiple>
-                    <!-- Categories will auto-fill here -->
-                </select>
-                <button id="sort-priority-highest">Sort by Priority [Highest]</button>
-                <button id="sort-priority-lowest">Sort by Priority [Lowest]</button>
-                <button id="sort-newest">Sort by Most Recently Changed/Added [Newest]</button>
-                <button id="sort-oldest">Sort by Most Recently Changed/Added [Oldest]</button>
-                <button id="sort-az">Sort [A-Z]</button>
-                <button id="sort-za">Sort [Z-A]</button>
-            </div>
-
-            <div id="wishlist" class="scrollable-list">
-                <!-- Items will be dynamically added here -->
-            </div>
-        </div>
-
-        <div id="changelog-section" style="display: none;">
-            <textarea id="changelog-text" class="scrollable-text" placeholder="Edit the changelog here..."></textarea>
-        </div>
+    <div id="navbar">
+        <button id="view-list">View List</button>
+        <button id="changelog">Changelog</button>
     </div>
-
+    <div id="content">
+        <!-- Content will be dynamically loaded here -->
+    </div>
     <script src="script.js"></script>
 </body>
-
 </html>
