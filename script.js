@@ -83,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <select id="category-filter" multiple class="filter-select">
                     <option value="All" selected>All Categories</option>
                 </select>
-                <button id="sort-priority-high" class="btn">Sort by Priority: Highest</button>
-                <button id="sort-priority-low" class="btn">Sort by Priority: Lowest</button>
+                <button id="sort-priority-high" class="btn">Sort by Highest Priority</button>
+                <button id="sort-priority-low" class="btn">Sort by Lowest Priority</button>
                 <button id="sort-timestamp-newest" class="btn">Sort by Newest</button>
                 <button id="sort-timestamp-oldest" class="btn">Sort by Oldest</button>
                 <button id="sort-az" class="btn">Sort A-Z</button>
