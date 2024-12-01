@@ -222,12 +222,12 @@ const loadViewList = () => {
     // Maintain Create Entry functionality
     document.getElementById('load-entry').addEventListener('click', () => {
         const entryNumber = parseInt(document.getElementById('entry-load-number').value, 10);
-        if (isNaN(entryNumber) || entryNumber < 1 || entryNumber > wishlist.length) {
+        if (isNaN(entryNumber) || entryNumber < 1 || entryNumber > filteredWishlist.length) {
             alert('Invalid entry number.');
             return;
         }
 
-        const entry = wishlist[entryNumber - 1];
+        const entry = filteredWishlist[entryNumber - 1];
         document.getElementById('entry-name').value = entry.name;
         document.getElementById('entry-category').value = entry.category;
         document.getElementById('entry-priority').value = entry.priority;
