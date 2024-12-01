@@ -1,100 +1,46 @@
+/* General Page Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     margin: 0;
-}
-
-#container {
-    width: 80%;
-    max-width: 1000px;
-    margin: 20px auto;
+    padding: 0;
     text-align: center;
 }
 
-.nav-btn {
-    padding: 20px 40px;
-    font-size: 18px;
-    margin: 10px;
-    cursor: pointer;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
+/* Navigation Bar Styling */
+#navbar {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.nav-btn:hover {
+#navbar button {
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#navbar button:hover {
     background-color: #0056b3;
 }
 
-#controls {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
-#controls button {
-    padding: 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-}
-
-#controls select {
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 5px;
-    width: 200px;
-}
-
-.scrollable-list {
-    max-height: 500px;
-    overflow-y: auto;
-}
-
-.scrollable-text {
-    width: 80%;
-    height: 500px;
-    margin: 20px;
+/* Content Section */
+#content {
+    margin-top: 20px;
+    font-size: 24px;
     padding: 20px;
-    font-size: 16px;
-}
-
-#wishlist li {
-    list-style: none;
-    padding: 20px;
-    margin: 20px;
-    border: 2px solid #ddd;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    background-color: white;
     border-radius: 10px;
-    background-color: #fff;
-    font-size: 18px;
-}
-
-#wishlist li a {
-    color: #007bff;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.priority-high {
-    color: red;
-    font-weight: bold;
-}
-
-.priority-medium {
-    color: orange;
-    font-weight: bold;
-}
-
-.priority-low {
-    color: green;
-    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
