@@ -75,43 +75,35 @@ fetch('wishlist.json')
 document.addEventListener('DOMContentLoaded', () => {
     const contentDiv = document.getElementById('content');
 
-    // Function to load View List
-    const loadViewList = () => {
+    // Function to load View Listconst loadViewList = () => {
+    const contentDiv = document.getElementById('content');
         contentDiv.innerHTML = `
             <h2>View List</h2>
             <div id="controls" style="margin-bottom: 20px;">
-                <select id="category-filter" multiple style="width: 200px; padding: 10px; font-size: 16px;">
-                    <option value="All" selected>All Categories</option>
-                </select>
-                <button id="sort-priority-high" style="margin: 0 10px; padding: 10px;">Sort by Priority: Highest</button>
-                <button id="sort-priority-low" style="margin: 0 10px; padding: 10px;">Sort by Priority: Lowest</button>
-                <button id="sort-timestamp-newest" style="margin: 0 10px; padding: 10px;">Sort by Newest</button>
-                <button id="sort-timestamp-oldest" style="margin: 0 10px; padding: 10px;">Sort by Oldest</button>
-                <button id="sort-az" style="margin: 0 10px; padding: 10px;">Sort A-Z</button>
-                <button id="sort-za" style="margin: 0 10px; padding: 10px;">Sort Z-A</button>
+                <div id="category-container" style="display: flex; flex-wrap: wrap; gap: 5px; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+                    <input id="category-input" style="flex-grow: 1; border: none; outline: none;" placeholder="Type to filter categories..." />
+                </div>
+                <button id="sort-priority-high" style="margin: 10px;">Sort by Priority: Highest</button>
+                <button id="sort-priority-low" style="margin: 10px;">Sort by Priority: Lowest</button>
+                <button id="sort-timestamp-newest" style="margin: 10px;">Sort by Newest</button>
+                <button id="sort-timestamp-oldest" style="margin: 10px;">Sort by Oldest</button>
+                <button id="sort-az" style="margin: 10px;">Sort A-Z</button>
+                <button id="sort-za" style="margin: 10px;">Sort Z-A</button>
             </div>
             <div id="wishlist-items" style="max-height: 600px; overflow-y: auto;"></div>
         `;
 
-        // Populate category filter
-        const categoryFilter = document.getElementById('category-filter');
-        const categories = [...new Set(wishlist.map(item => item.category))];
-        categories.forEach(category => {
-            const option = document.createElement('option');
-            option.value = category;
-            option.textContent = category;
-            categoryFilter.appendChild(option);
-        });
+        const categoryInput = document.getElementById('category-input');
+        const categoryContainer = document.getElementById('category-container');
+        const wishlistContainer = document.getElementById('wishlist-items');
+
+        let selectedCategories = [];
+        const allCategories = [...new Set(wishlist.map(item => item.category))];
 
         const renderWishlist = (items) => {
-            const wishlistContainer = document.getElementById('wishlist-items');
             wishlistContainer.innerHTML = '';
             items.forEach((item, index) => {
-                const boxColor = item.priority === 3
-                    ? 'red'
-                    : item.priority === 2
-                    ? 'yellow'
-                    : 'gray';
+                const boxColor = item.priority === 3 ? 'red' : item.priority === 2 ? 'yellow' : 'gray';
                 wishlistContainer.innerHTML += `
                     <div style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
                         <h3 style="margin: 0;">
@@ -124,48 +116,49 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        // Initial render
-        renderWishlist(wishlist);
-
-        // Add event listeners for sorting and filtering
-        document.getElementById('sort-priority-high').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByPriority('Up');
-            renderWishlist(sorted);
-        });
-
-        document.getElementById('sort-priority-low').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByPriority('Down');
-            renderWishlist(sorted);
-        });
-
-        document.getElementById('sort-timestamp-newest').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByTimestampNewest();
-            renderWishlist(sorted);
-        });
-
-        document.getElementById('sort-timestamp-oldest').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByTimestampOldest();
-            renderWishlist(sorted);
-        });
-
-        document.getElementById('sort-az').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByAZ();
-            renderWishlist(sorted);
-        });
-
-        document.getElementById('sort-za').addEventListener('click', () => {
-            const sorted = getAllWishlistEntries().sortWishlistEntriesByZA();
-            renderWishlist(sorted);
-        });
-
-        categoryFilter.addEventListener('change', () => {
-            const selectedCategories = Array.from(categoryFilter.selectedOptions).map(opt => opt.value);
-            const filtered = selectedCategories.includes('All')
+        const filterAndRender = () => {
+            const filtered = selectedCategories.length === 0
                 ? wishlist
                 : wishlist.filter(item => selectedCategories.includes(item.category));
             renderWishlist(filtered);
+        };
+    
+        const createBubble = (category) => {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.innerHTML = `${category} <span>&times;</span>`;
+            bubble.querySelector('span').addEventListener('click', () => {
+                selectedCategories = selectedCategories.filter(cat => cat !== category);
+                bubble.remove();
+                filterAndRender();
+            });
+            categoryContainer.insertBefore(bubble, categoryInput);
+        };
+
+        categoryInput.addEventListener('input', (e) => {
+            const value = e.target.value.toLowerCase();
+            const suggestions = allCategories.filter(cat => cat.toLowerCase().startsWith(value));
+            // Show autocomplete suggestions (optional dropdown)
+            console.log(suggestions); // Use a dropdown to display suggestions if needed
         });
+
+        categoryInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === 'Tab') {
+                e.preventDefault();
+                const value = categoryInput.value.trim();
+                if (value && allCategories.includes(value) && !selectedCategories.includes(value)) {
+                    selectedCategories.push(value);
+                    createBubble(value);
+                    filterAndRender();
+                }
+                categoryInput.value = '';
+            }
+        });
+        
+        // Initial render
+        renderWishlist(wishlist);
     };
+
 
     // Function to load Changelog
     const loadChangelog = () => {
