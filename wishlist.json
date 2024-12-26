@@ -11,33 +11,6 @@
             "timestamp": "2024-12-01T22:33:24.023Z"
         },
         {
-            "name": "Book of Bill",
-            "category": "Hardback Books",
-            "priority": 3,
-            "value": 7.5,
-            "description": "Fucking cool. Amazing collectors item. What more needs to be said.",
-            "link": "https://www.barnesandnoble.com/w/the-book-of-bill-alex-hirsch/1144490969",
-            "timestamp": "2024-12-01T22:10:36.881Z"
-        },
-        {
-            "name": "Journal 3",
-            "category": "Hardback Books",
-            "priority": 3,
-            "value": 7.25,
-            "description": "Fucking cool. Amazing collectors item. What more needs to be said.",
-            "link": "https://www.amazon.com/Gravity-Falls-Journal-Alex-Hirsch/dp/1484746694/ref=pd_sbs_d_sccl_1_1/147-3261503-5300414?pd_rd_w=y0GRa&content-id=amzn1.sym.156274ff-6322-443d-8bbf-ab3ed87e382f&pf_rd_p=156274ff-6322-443d-8bbf-ab3ed87e382f&pf_rd_r=MW1SC8YJMS6AM1FQRZNY&pd_rd_wg=m8edI&pd_rd_r=3a5ae761-f0d9-416d-9d7a-cbbc3fb5b49d&pd_rd_i=1484746694&psc=1",
-            "timestamp": "2024-12-01T22:11:19.109Z"
-        },
-        {
-            "name": "PC Fallout 4 + Fallout VR + Fallout DLC",
-            "category": "Video Games & Programs",
-            "priority": 3,
-            "value": 4,
-            "description": "I like the games. Has good modding, VR is fucking cool. Yeah. Not sure how much i will play it thou. As im finding if its not minecraft, its best to have a set ending, otherwise i get board.",
-            "link": "https://store.steampowered.com/sub/199943/",
-            "timestamp": "2024-12-01T22:20:34.194Z"
-        },
-        {
             "name": "Personal Server",
             "category": "Physical Things",
             "priority": 2,
@@ -137,24 +110,6 @@
             "timestamp": "2024-12-01T21:57:25.650Z"
         },
         {
-            "name": "Iron Giant",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 6,
-            "description": "Nostalgia, Cool. Want it for my collection. Good for fam.",
-            "link": "https://www.amazon.com/Iron-Giant-Special-Eli-Marienthal/dp/B00009M9BK/ref=sr_1_5?keywords=Iron+Giant&s=movies-tv&sr=1-5",
-            "timestamp": "2024-12-01T21:59:42.311Z"
-        },
-        {
-            "name": "PC Patricks Parabox",
-            "category": "Video Games & Programs",
-            "priority": 2,
-            "value": 6,
-            "description": "Cool puzzle game. Set ending. Nice.",
-            "link": "https://store.steampowered.com/app/1260520/Patricks_Parabox/",
-            "timestamp": "2024-12-01T22:21:29.735Z"
-        },
-        {
             "name": "Decorative Projector",
             "category": "Physical Things",
             "priority": 2,
@@ -191,24 +146,6 @@
             "timestamp": "2024-12-01T22:29:22.887Z"
         },
         {
-            "name": "Gravity Falls season 1, and 2",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 4,
-            "description": "Yep. Cool. Want it for my collection.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
-            "name": "All of The Owl House",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 3,
-            "description": "Yep. Cool. Want it for my collection.",
-            "link": "",
-            "timestamp": "2024-12-01T20:54:18.374Z"
-        },
-        {
             "name": "FNAF(⅔)",
             "category": "Hardback Books",
             "priority": 2,
@@ -216,15 +153,6 @@
             "description": "Need the last book in the series, i have Silver Eyes, and Twisted Ones. Get graphic novel versions.",
             "link": "https://www.amazon.com/Five-Nights-at-Freddys-Collection/dp/1338323024",
             "timestamp": "2024-12-01T22:11:57.548Z"
-        },
-        {
-            "name": "All of Land of stories Books",
-            "category": "Hardback Books",
-            "priority": 2,
-            "value": 2.5,
-            "description": "I read them all, but don’t have them all. I need them all… for my collection… heh",
-            "link": "https://www.amazon.com/Land-Stories-Complete-Paperback-Gift/dp/0316480843/ref=asc_df_0316480843&mcid=7b8ad20765373ea0ad01199a9246b635?tag=bngsmtphsnus-20&linkCode=df0&hvadid=80127027919890&hvnetw=s&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4583726554013886&psc=1",
-            "timestamp": "2024-12-01T22:12:29.432Z"
         },
         {
             "name": "Tales from the Pizzaplex",
@@ -299,15 +227,6 @@
             "timestamp": "2024-12-01T22:01:34.413Z"
         },
         {
-            "name": "Limitless (TV show)",
-            "category": "Movies & TV shows",
-            "priority": 1,
-            "value": 5,
-            "description": "Yep. Cool. Want it for my collection. I think mom would like it.",
-            "link": "https://www.amazon.com/Limitless-Season-Open-your-Mind/dp/B01DBXZRFU",
-            "timestamp": "2024-12-01T22:03:54.884Z"
-        },
-        {
             "name": "PC 4D Golf",
             "category": "Video Games & Programs",
             "priority": 1,
@@ -321,7 +240,7 @@
             "category": "Movies & TV shows",
             "priority": 1,
             "value": 4,
-            "description": "Nostalgia, Cool. Want it for my collection.",
+            "description": "Nostalgia, Cool. Want it for my collection. We got the movies, but not the real TV show.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
         },
@@ -360,15 +279,6 @@
             "description": "Yep. Cool. Want it for my collection.",
             "link": "https://www.amazon.com/Rick-Morty-Complete-Seasons-1-5/dp/B09QNZC4VT/ref=sr_1_1?crid=1DDIRKVECUV7C&keywords=Rick+and+Morty%3A+The+Complete+3+Season&qid=1701671551&sprefix=rick+and+morty+the+complete+3+season%2Caps%2C148&sr=8-1",
             "timestamp": "2024-12-01T22:02:16.075Z"
-        },
-        {
-            "name": "PC Ark: Survival Evolved",
-            "category": "Video Games & Programs",
-            "priority": 1,
-            "value": 4,
-            "description": "Eh, cool game I guess.",
-            "link": "https://store.steampowered.com/bundle/21105/ARK_Ultimate_Survivor_Edition/",
-            "timestamp": "2024-12-01T22:22:46.288Z"
         },
         {
             "name": "Game Theory Shirts/Merch",
@@ -425,15 +335,6 @@
             "timestamp": "2024-12-01T22:25:01.507Z"
         },
         {
-            "name": "Hyperbolica",
-            "category": "Video Games & Programs",
-            "priority": 1,
-            "value": 3,
-            "description": "Eh, cool game I guess.",
-            "link": "https://store.steampowered.com/app/1256230/Hyperbolica/",
-            "timestamp": "2024-12-01T22:26:51.662Z"
-        },
-        {
             "name": "Five Nights at Freddy's: The Week Before",
             "category": "Hardback Books",
             "priority": 1,
@@ -450,15 +351,6 @@
             "description": "Good for exercise, and fun sporty game. Beat saber is cool, so is this.",
             "link": "https://store.steampowered.com/app/890550/RUMBLE/",
             "timestamp": "2024-12-01T22:27:12.521Z"
-        },
-        {
-            "name": "Missing Space Engineers DLC: 1, 2, 3, 4",
-            "category": "Video Games & Programs",
-            "priority": 1,
-            "value": 0.25,
-            "description": "I don't have them. I collect them. Whatever. Make sure to cheak for more DLC i do not have, i don’t remember what i don’t have.",
-            "link": "https://store.steampowered.com/app/2504720/Space_Engineers__Decorative_Pack_3/?curator_clanid=5134093",
-            "timestamp": "2024-12-01T22:28:00.953Z"
         }
     ]
 }
