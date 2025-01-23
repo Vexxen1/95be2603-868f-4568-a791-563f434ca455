@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button id="sort-timestamp-oldest" class="btn">Sort by Oldest</button>
                 <button id="sort-az" class="btn">Sort A-Z</button>
                 <button id="sort-za" class="btn">Sort Z-A</button>
+                <button id="export" class="btn">Download as Docx!</button>
             </div>
 
             <div id="wishlist-items" class="wishlist-container"></div>
