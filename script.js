@@ -319,8 +319,92 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     document.getElementById('export').addEventListener('click', async () => {
-    // The `document.xml` template with placeholders
-    const docTemplate = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    // Sort the wishlist by priority (ascending)
+    const sortedWishlist = wishlist.sortWishlistEntriesByPriority('Up');
+
+    // Table template for each wishlist entry
+    const tableTemplate = (index, entry) => `
+        <w:tbl>
+            <w:tblPr>
+                <w:tblStyle w:val="Table1"/>
+                <w:tblW w:w="9360.0" w:type="dxa"/>
+                <w:jc w:val="left"/>
+                <w:tblBorders>
+                    <w:top w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+                    <w:left w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+                    <w:bottom w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+                    <w:right w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+                    <w:insideH w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+                    <w:insideV w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+                </w:tblBorders>
+                <w:tblLayout w:type="fixed"/>
+                <w:tblLook w:val="0600"/>
+            </w:tblPr>
+            <w:tblGrid>
+                <w:gridCol w:w="9360"/>
+            </w:tblGrid>
+            <w:tr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:shd w:fill="999999" w:val="clear"/>
+                        <w:tcMar>
+                            <w:top w:w="100.0" w:type="dxa"/>
+                            <w:left w:w="100.0" w:type="dxa"/>
+                            <w:bottom w:w="100.0" w:type="dxa"/>
+                            <w:right w:w="100.0" w:type="dxa"/>
+                        </w:tcMar>
+                        <w:vAlign w:val="top"/>
+                    </w:tcPr>
+                    <w:p>
+                        <w:r>
+                            <w:t>${index + 1}. ${entry.name} - ${entry.category}</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:shd w:fill="d9d9d9" w:val="clear"/>
+                        <w:tcMar>
+                            <w:top w:w="100.0" w:type="dxa"/>
+                            <w:left w:w="100.0" w:type="dxa"/>
+                            <w:bottom w:w="100.0" w:type="dxa"/>
+                            <w:right w:w="100.0" w:type="dxa"/>
+                        </w:tcMar>
+                        <w:vAlign w:val="top"/>
+                    </w:tcPr>
+                    <w:p>
+                        <w:r>
+                            <w:t>${entry.priority === 3 ? "Top Priority" : entry.priority === 2 ? "Nice-to-Have" : "Optional"} - ${entry.value}/10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:shd w:fill="d9d9d9" w:val="clear"/>
+                        <w:tcMar>
+                            <w:top w:w="100.0" w:type="dxa"/>
+                            <w:left w:w="100.0" w:type="dxa"/>
+                            <w:bottom w:w="100.0" w:type="dxa"/>
+                            <w:right w:w="100.0" w:type="dxa"/>
+                        </w:tcMar>
+                        <w:vAlign w:val="top"/>
+                    </w:tcPr>
+                    <w:p>
+                        <w:r>
+                            <w:t>Description: ${entry.description}</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+        </w:tbl>
+    `;
+
+    // Generate the full document.xml content
+    const documentXML = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <w:document xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
                 xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -341,37 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <w:t>Up to date as of ${getCurrentTimestamp()}</w:t>
                 </w:r>
             </w:p>
-            ${wishlist.map((item, index) => `
-                <w:tbl>
-                    <w:tr>
-                        <w:tc>
-                            <w:p>
-                                <w:r>
-                                    <w:t>${index + 1}. ${item.name} - ${item.category}</w:t>
-                                </w:r>
-                            </w:p>
-                        </w:tc>
-                    </w:tr>
-                    <w:tr>
-                        <w:tc>
-                            <w:p>
-                                <w:r>
-                                    <w:t>${item.priority === 3 ? "Top Priority" : item.priority === 2 ? "Nice-to-Have" : "Optional"} - ${item.value}/10</w:t>
-                                </w:r>
-                            </w:p>
-                        </w:tc>
-                    </w:tr>
-                    <w:tr>
-                        <w:tc>
-                            <w:p>
-                                <w:r>
-                                    <w:t>Description: ${item.description}</w:t>
-                                </w:r>
-                            </w:p>
-                        </w:tc>
-                    </w:tr>
-                </w:tbl>
-            `).join('')}
+            ${sortedWishlist.map((entry, index) => tableTemplate(index, entry)).join('')}
             <w:sectPr>
                 <w:pgSz w:w="12240" w:h="15840"/>
                 <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440"/>
@@ -379,28 +433,22 @@ document.addEventListener('DOMContentLoaded', () => {
         </w:body>
     </w:document>`;
 
-    // Using JSZip to create the .docx structure
+    // Use JSZip to create the .docx file
     const zip = new JSZip();
-
-    // Add Word folder files
-    zip.file("word/document.xml", docTemplate);
+    zip.file("word/document.xml", documentXML);
     zip.file("[Content_Types].xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
         <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
         <Default Extension="xml" ContentType="application/xml"/>
         <Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
     </Types>`);
-
-    // Add `_rels` folder and relationship file
     zip.folder("_rels").file(".rels", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
         <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
     </Relationships>`);
 
-    // Generate the .docx file
+    // Generate and download the .docx file
     const blob = await zip.generateAsync({ type: "blob" });
-
-    // Create a download link
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "wishlist.docx";
@@ -408,6 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.click();
     document.body.removeChild(link);
     });
+
 
 
     // Function to load Changelog
