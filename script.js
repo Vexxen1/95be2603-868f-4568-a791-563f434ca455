@@ -329,85 +329,135 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Function to create and download a .txt fileconst handleDownload = () => {
-    const handleDownload = () => {
-        // Use the current timestamp for the document subtitle
-        const currentDate = new Date().toLocaleString();
-        const docxContent = [];
+    const handleDownload = async () => {
+        const {
+            Document,
+            Packer,
+            Paragraph,
+            TextRun,
+            Table,
+            TableRow,
+            TableCell,
+            AlignmentType
+        } = docx;
 
-        // Add the title
-        docxContent.push({
-            text: "The List!",
-            alignment: "center",
-            fontSize: 24,
-            fontFace: "Times New Roman",
-        });
+        // Create a new document
+        const doc = new Document();
 
-        // Add the subtitle
-        docxContent.push({
-            text: `Created on ${currentDate}`,
-            alignment: "center",
-            fontSize: 12,
-            fontFace: "Times New Roman",
+        // Add title
+        doc.addSection({
+            children: [
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [
+                        new TextRun({
+                            text: "The List!",
+                            bold: true,
+                            size: 48, // 24pt font size
+                            font: "Times New Roman",
+                        }),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [
+                        new TextRun({
+                            text: `Created on ${new Date().toLocaleString()}`,
+                            size: 24, // 12pt font size
+                            font: "Times New Roman",
+                        }),
+                    ],
+                }),
+            ],
         });
 
         // Sort the wishlist by priority
         const sortedWishlist = wishlist.sortWishlistEntriesByPriority("Up");
 
-        // Check if there are entries
         if (sortedWishlist.length > 0) {
-            // Add a table for the wishlist
-            const tableData = [];
-
-            sortedWishlist.forEach((item) => {
+            // Add a table for the entries
+            const tableRows = sortedWishlist.map((item) => {
                 const priorityColor =
                     item.priority === 3 ? "red" : item.priority === 2 ? "yellow" : "gray";
 
-                tableData.push([{
-                        text: `${item.name}${item.link ? ` (Link: ${item.link})` : ""} - ${item.category}`,
-                        alignment: "left",
-                        fontSize: 12,
-                        fontFace: "Times New Roman",
-                    },
-                    {
-                        text: `${item.priority === 3 ? "Top Priority" : item.priority === 2 ? "Nice-to-Have" : "Optional"} - ${
-                        item.priority
-                    }/10`,
-                        alignment: "left",
-                        fontSize: 12,
-                        fontFace: "Times New Roman",
-                        color: priorityColor,
-                    },
-                    {
-                        text: `Description: ${item.description}`,
-                        alignment: "left",
-                        fontSize: 12,
-                        fontFace: "Times New Roman",
-                    },
-                ]);
+                return new TableRow({
+                    children: [
+                        new TableCell({
+                            children: [
+                                new Paragraph({
+                                    children: [
+                                        new TextRun({
+                                            text: `${item.name} (${item.category})`,
+                                            font: "Times New Roman",
+                                            size: 24,
+                                            underline: item.link ? "single" : undefined,
+                                            color: item.link ? "0000FF" : undefined,
+                                        }),
+                                    ],
+                                }),
+                            ],
+                        }),
+                        new TableCell({
+                            children: [
+                                new Paragraph({
+                                    children: [
+                                        new TextRun({
+                                            text: `${item.priority === 3 ? "Top Priority" : item.priority === 2 ? "Nice-to-Have" : "Optional"} - ${
+                                            item.priority
+                                        }/10`,
+                                            font: "Times New Roman",
+                                            size: 24,
+                                            color: priorityColor,
+                                        }),
+                                    ],
+                                }),
+                            ],
+                        }),
+                        new TableCell({
+                            children: [
+                                new Paragraph({
+                                    children: [
+                                        new TextRun({
+                                            text: `Description: ${item.description}`,
+                                            font: "Times New Roman",
+                                            size: 24,
+                                        }),
+                                    ],
+                                }),
+                            ],
+                        }),
+                    ],
+                });
             });
 
-            docxContent.push({
-                table: {
-                    rows: tableData,
-                },
+            // Add the table to the document
+            doc.addSection({
+                children: [
+                    new Table({
+                        rows: tableRows,
+                    }),
+                ],
             });
         } else {
-            // Add an error message if no entries are found
-            docxContent.push({
-                text: "Uh oh... the list is empty... uh... this is an error more than likely!",
-                alignment: "center",
-                fontSize: 12,
-                fontFace: "Times New Roman",
+            // Add an error message if the list is empty
+            doc.addSection({
+                children: [
+                    new Paragraph({
+                        alignment: AlignmentType.CENTER,
+                        children: [
+                            new TextRun({
+                                text: "Uh oh... the list is empty... uh... this is an error more than likely!",
+                                font: "Times New Roman",
+                                size: 24,
+                            }),
+                        ],
+                    }),
+                ],
             });
         }
 
         // Generate the .docx file
-        const blob = createDocx(docxContent, {
-            fileName: "wishlist.docx",
-            title: "The List!",
-            subject: "Wishlist",
-            author: "ME!",
-        });
+        const blob = await Packer.toBlob(doc);
 
         // Trigger the file download
         const downloadLink = document.createElement("a");
@@ -417,6 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadLink.click();
         document.body.removeChild(downloadLink);
     };
+
 
     // Event listener for the Upload button
     document.getElementById('download').addEventListener('click', handleDownload);
