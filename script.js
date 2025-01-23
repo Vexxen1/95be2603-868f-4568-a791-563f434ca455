@@ -328,6 +328,11 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     };
 
+    // Event listener for the Upload button
+    document.getElementById('upload').addEventListener('click', () => {
+        alert('YOU CLICKED UPLOAD!');
+    });
+    
     // Add event listeners to buttons
     document.getElementById('view-list').addEventListener('click', loadViewList);
     document.getElementById('changelog').addEventListener('click', loadChangelog);
