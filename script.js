@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(() => alert('Updated wishlist saved to instance and copied to clipboard!'))
                 .catch(() => alert('Failed to copy updated wishlist to clipboard.'));
 
-            
+
             wishlist = wishlist.sortWishlistEntriesByTimestampNewest();
             renderWishlist(wishlist);
 
@@ -330,14 +330,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to create and download a .txt fileconst handleDownload = () => {
     const handleDownload = () => {
-        const textToSave = "This has text"; // Replace with your desired content
-        const blob = new Blob([textToSave], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' }); // Blob for .docx file
-        const downloadLink = document.createElement('a'); // Create a temporary link element
-        downloadLink.href = URL.createObjectURL(blob); // Create a URL for the Blob
-        downloadLink.download = 'wishlist.docx'; // Set the file name for download
-        document.body.appendChild(downloadLink); // Append the link to the body
-        downloadLink.click(); // Trigger the download
-        document.body.removeChild(downloadLink); // Clean up the link element
+        // Use the current timestamp for the document subtitle
+        const currentDate = new Date().toLocaleString();
+        const docxContent = [];
+
+        // Add the title
+        docxContent.push({
+            text: "The List!",
+            alignment: "center",
+            fontSize: 24,
+            fontFace: "Times New Roman",
+        });
+
+        // Add the subtitle
+        docxContent.push({
+            text: `Created on ${currentDate}`,
+            alignment: "center",
+            fontSize: 12,
+            fontFace: "Times New Roman",
+        });
+
+        // Sort the wishlist by priority
+        const sortedWishlist = wishlist.sortWishlistEntriesByPriority("Up");
+
+        // Check if there are entries
+        if (sortedWishlist.length > 0) {
+            // Add a table for the wishlist
+            const tableData = [];
+
+            sortedWishlist.forEach((item) => {
+                const priorityColor =
+                    item.priority === 3 ? "red" : item.priority === 2 ? "yellow" : "gray";
+
+                tableData.push([{
+                        text: `${item.name}${item.link ? ` (Link: ${item.link})` : ""} - ${item.category}`,
+                        alignment: "left",
+                        fontSize: 12,
+                        fontFace: "Times New Roman",
+                    },
+                    {
+                        text: `${item.priority === 3 ? "Top Priority" : item.priority === 2 ? "Nice-to-Have" : "Optional"} - ${
+                        item.priority
+                    }/10`,
+                        alignment: "left",
+                        fontSize: 12,
+                        fontFace: "Times New Roman",
+                        color: priorityColor,
+                    },
+                    {
+                        text: `Description: ${item.description}`,
+                        alignment: "left",
+                        fontSize: 12,
+                        fontFace: "Times New Roman",
+                    },
+                ]);
+            });
+
+            docxContent.push({
+                table: {
+                    rows: tableData,
+                },
+            });
+        } else {
+            // Add an error message if no entries are found
+            docxContent.push({
+                text: "Uh oh... the list is empty... uh... this is an error more than likely!",
+                alignment: "center",
+                fontSize: 12,
+                fontFace: "Times New Roman",
+            });
+        }
+
+        // Generate the .docx file
+        const blob = createDocx(docxContent, {
+            fileName: "wishlist.docx",
+            title: "The List!",
+            subject: "Wishlist",
+            author: "ME!",
+        });
+
+        // Trigger the file download
+        const downloadLink = document.createElement("a");
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = "wishlist.docx";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
     };
 
     // Event listener for the Upload button
