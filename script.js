@@ -1,6 +1,10 @@
 const getCurrentTimestamp = () => {
     return new Date().toISOString();
 };
+// Import the necessary libraries
+const docxtemplater = require('docxtemplater');
+const fs = require('fs');
+const path = require('path');
 
 // Global variables for wishlist data and changelog
 let wishlist = [];
@@ -314,10 +318,97 @@ document.addEventListener('DOMContentLoaded', () => {
             renderWishlist(wishlist);
         });
     };
+    document.getElementById('export').addEventListener('click', async () => {
+    // The `document.xml` template with placeholders
+    const docTemplate = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <w:document xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+                xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+        <w:body>
+            <w:p>
+                <w:pPr>
+                    <w:jc w:val="center"/>
+                </w:pPr>
+                <w:r>
+                    <w:t>The List</w:t>
+                </w:r>
+            </w:p>
+            <w:p>
+                <w:pPr>
+                    <w:jc w:val="center"/>
+                </w:pPr>
+                <w:r>
+                    <w:t>Up to date as of ${getCurrentTimestamp()}</w:t>
+                </w:r>
+            </w:p>
+            ${wishlist.map((item, index) => `
+                <w:tbl>
+                    <w:tr>
+                        <w:tc>
+                            <w:p>
+                                <w:r>
+                                    <w:t>${index + 1}. ${item.name} - ${item.category}</w:t>
+                                </w:r>
+                            </w:p>
+                        </w:tc>
+                    </w:tr>
+                    <w:tr>
+                        <w:tc>
+                            <w:p>
+                                <w:r>
+                                    <w:t>${item.priority === 3 ? "Top Priority" : item.priority === 2 ? "Nice-to-Have" : "Optional"} - ${item.value}/10</w:t>
+                                </w:r>
+                            </w:p>
+                        </w:tc>
+                    </w:tr>
+                    <w:tr>
+                        <w:tc>
+                            <w:p>
+                                <w:r>
+                                    <w:t>Description: ${item.description}</w:t>
+                                </w:r>
+                            </w:p>
+                        </w:tc>
+                    </w:tr>
+                </w:tbl>
+            `).join('')}
+            <w:sectPr>
+                <w:pgSz w:w="12240" w:h="15840"/>
+                <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440"/>
+            </w:sectPr>
+        </w:body>
+    </w:document>`;
 
+    // Using JSZip to create the .docx structure
+    const zip = new JSZip();
 
-    document.getElementById('export').addEventListener('click', () => {
+    // Add Word folder files
+    zip.file("word/document.xml", docTemplate);
+    zip.file("[Content_Types].xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+        <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+        <Default Extension="xml" ContentType="application/xml"/>
+        <Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
+    </Types>`);
+
+    // Add `_rels` folder and relationship file
+    zip.folder("_rels").file(".rels", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
+    </Relationships>`);
+
+    // Generate the .docx file
+    const blob = await zip.generateAsync({ type: "blob" });
+
+    // Create a download link
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "wishlist.docx";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
     });
+
 
     // Function to load Changelog
     const loadChangelog = () => {
