@@ -328,6 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Reloaded Data!'))
             })
             .catch(error => console.error('Error Reloading wishlist:', error));
+        renderWishlist(wishlist);
     });
 
 
