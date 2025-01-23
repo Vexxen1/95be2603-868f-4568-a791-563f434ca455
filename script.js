@@ -248,17 +248,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const Dentry = filteredWishlist[entryNumber - 1];
+            const dentry = filteredWishlist[entryNumber - 1];
             wishlist = wishlist.filter(
-                (entry) => !(Dentry)
+                (entry) => !(entry.name === dentry.name && entry.category === dentry.category)
             );
-            wishlist = wishlist.sortWishlistEntriesByTimestampNewest();
+            const updatedData = {
+                changelog: changelog, // You can populate this field dynamically if needed
+                data: wishlist, // Use the updated wishlist as the data array
+            };
             navigator.clipboard.writeText(JSON.stringify(updatedData, null, 4))
                 .then(() => alert('Updated wishlist saved to instance and copied to clipboard!'))
                 .catch(() => alert('Failed to copy updated wishlist to clipboard.'));
 
-            // Re-render the list to reflect changes
-            renderWishlist(wishlist);
+            
+            filteredWishlist = filteredWishlist.sortWishlistEntriesByTimestampNewest();
+            renderWishlist(filteredWishlist);
+
         });
         document.getElementById('copy-to-clipboard').addEventListener('click', () => {
             const name = document.getElementById('entry-name').value.trim();
