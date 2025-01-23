@@ -460,6 +460,18 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     };
 
+    const handleDownload = () => {
+        const textToSave = "This has text"; // Replace with your desired content
+        const blob = new Blob([textToSave], {
+            type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        }); // Blob for .docx file
+        const downloadLink = document.createElement('a'); // Create a temporary link element
+        downloadLink.href = URL.createObjectURL(blob); // Create a URL for the Blob
+        downloadLink.download = 'wishlist.docx'; // Set the file name for download
+        document.body.appendChild(downloadLink); // Append the link to the body
+        downloadLink.click(); // Trigger the download
+        document.body.removeChild(downloadLink); // Clean up the link element
+    };
 
     // Event listener for the Upload button
     document.getElementById('download').addEventListener('click', handleDownload);
