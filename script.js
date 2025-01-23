@@ -328,11 +328,21 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     };
 
+    // Function to create and download a .txt file
+    const handleUpload = () => {
+        const textToSave = "This has text";
+        const blob = new Blob([textToSave], { type: 'text/plain' }); // Create a Blob object with the text
+        const downloadLink = document.createElement('a'); // Create a temporary link element
+        downloadLink.href = URL.createObjectURL(blob); // Create a URL for the Blob
+        downloadLink.download = 'upload.txt'; // Set the file name for download
+        document.body.appendChild(downloadLink); // Append the link to the body
+        downloadLink.click(); // Trigger the download
+        document.body.removeChild(downloadLink); // Clean up the link element
+    };
+
     // Event listener for the Upload button
-    document.getElementById('upload').addEventListener('click', () => {
-        alert('YOU CLICKED UPLOAD!');
-    });
-    
+    document.getElementById('upload').addEventListener('click', handleUpload);
+
     // Add event listeners to buttons
     document.getElementById('view-list').addEventListener('click', loadViewList);
     document.getElementById('changelog').addEventListener('click', loadChangelog);
