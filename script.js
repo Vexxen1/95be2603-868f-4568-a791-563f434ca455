@@ -340,7 +340,7 @@ Sorry mom, best i could do for formating!
 
         // Add the "All Categories" section
         if (sortedWishlist.length > 0) {
-            textToSave += `     All Categories:\n`;
+            textToSave += `=-=All Categories=-=\n\n`;
             sortedWishlist.forEach((entry) => {
                 textToSave += `     ${entry.name} - ${entry.category}\n`;
                 textToSave += `Priority: ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} (${entry.value}/10)\n`;
@@ -355,7 +355,7 @@ Sorry mom, best i could do for formating!
         categories.forEach((category) => {
             const categoryEntries = sortedWishlist.filter(entry => entry.category === category);
 
-            textToSave += `     ${category}:\n`;
+            textToSave += `\n=-=${category}=-=\n\n`;
             categoryEntries.forEach((entry) => {
                 textToSave += `     ${entry.name}\n`;
                 textToSave += `Priority: ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} (${entry.value}/10)\n`;
@@ -364,7 +364,7 @@ Sorry mom, best i could do for formating!
         });
 
         // Add the changelog at the end
-        textToSave += `     Changelog:\n`;
+        textToSave += `\n=-=Changelog=-=\n`;
         textToSave += `${changelog || 'No changes recorded yet.'}\n`;
 
         // Create a Blob object for the plain text file
