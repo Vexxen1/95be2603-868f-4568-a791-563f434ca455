@@ -269,55 +269,6 @@ document.addEventListener('DOMContentLoaded', () => {
             renderWishlist(wishlist);
 
         });
-        document.getElementById('copy-to-clipboard').addEventListener('click', () => {
-            const name = document.getElementById('entry-name').value.trim();
-            const category = document.getElementById('entry-category').value.trim();
-            const priority = parseInt(document.getElementById('entry-priority').value, 10);
-            const value = parseFloat(document.getElementById('entry-value').value);
-            const description = document.getElementById('entry-description').value.trim();
-            const link = document.getElementById('entry-link').value.trim();
-
-            if (!name || !category || isNaN(priority) || isNaN(value) || !description) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-
-            const newEntry = {
-                name,
-                category,
-                priority,
-                value,
-                description,
-                link: link || '',
-                timestamp: getCurrentTimestamp(),
-            };
-
-            // Filter out any existing entries with the same name and category
-            wishlist = wishlist.filter(
-                (entry) => !(entry.name === newEntry.name && entry.category === newEntry.category)
-            );
-
-            // Add the new entry
-            wishlist.push(newEntry);
-
-            // Sort the wishlist by priority
-            wishlist = wishlist.sortWishlistEntriesByTimestampNewest();
-
-            // Create the new formatted JSON object
-            const updatedData = {
-                changelog: changelog, // You can populate this field dynamically if needed
-                data: wishlist, // Use the updated wishlist as the data array
-            };
-
-            // Save the updated JSON object to clipboard
-            navigator.clipboard.writeText(JSON.stringify(updatedData, null, 4))
-                .then(() => alert('Updated wishlist saved to instance and copied to clipboard!'))
-                .catch(() => alert('Failed to copy updated wishlist to clipboard.'));
-
-            // Re-render the list to reflect changes
-            renderWishlist(wishlist);
-        });
-    };
     document.getElementById('export').addEventListener('click', async () => {
     // Sort the wishlist by priority (ascending)
     const sortedWishlist = wishlist.sortWishlistEntriesByPriority('Up');
@@ -456,6 +407,55 @@ document.addEventListener('DOMContentLoaded', () => {
     link.click();
     document.body.removeChild(link);
     });
+        document.getElementById('copy-to-clipboard').addEventListener('click', () => {
+            const name = document.getElementById('entry-name').value.trim();
+            const category = document.getElementById('entry-category').value.trim();
+            const priority = parseInt(document.getElementById('entry-priority').value, 10);
+            const value = parseFloat(document.getElementById('entry-value').value);
+            const description = document.getElementById('entry-description').value.trim();
+            const link = document.getElementById('entry-link').value.trim();
+
+            if (!name || !category || isNaN(priority) || isNaN(value) || !description) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            const newEntry = {
+                name,
+                category,
+                priority,
+                value,
+                description,
+                link: link || '',
+                timestamp: getCurrentTimestamp(),
+            };
+
+            // Filter out any existing entries with the same name and category
+            wishlist = wishlist.filter(
+                (entry) => !(entry.name === newEntry.name && entry.category === newEntry.category)
+            );
+
+            // Add the new entry
+            wishlist.push(newEntry);
+
+            // Sort the wishlist by priority
+            wishlist = wishlist.sortWishlistEntriesByTimestampNewest();
+
+            // Create the new formatted JSON object
+            const updatedData = {
+                changelog: changelog, // You can populate this field dynamically if needed
+                data: wishlist, // Use the updated wishlist as the data array
+            };
+
+            // Save the updated JSON object to clipboard
+            navigator.clipboard.writeText(JSON.stringify(updatedData, null, 4))
+                .then(() => alert('Updated wishlist saved to instance and copied to clipboard!'))
+                .catch(() => alert('Failed to copy updated wishlist to clipboard.'));
+
+            // Re-render the list to reflect changes
+            renderWishlist(wishlist);
+        });
+    };
 
 
 
