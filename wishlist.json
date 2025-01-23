@@ -1,6 +1,15 @@
 {
-    "changelog": "2024-12-18 - Umbrella Academy Season 3 can be bought, link added\n2024-12-18 - Inside Out 1 & 2, Lovely Movies\n2024-12-18 - New Keyboard, My current keyboard is build into my laptop, and i am missing a key. So i figure, custom keyboard for the win!\n2024-12-18 - Added Fantastic Mr. Fox, Fantastic Mr. Movie, very, very nice and fun for all 3 of us i think\n2024-12-18 - Added link to Venom 1, 2, 3 entry\n2024-12-18 - Added The Mitchells vs the Machines,  very fun movie for the entire family.\n2024-12-01 - Added 'Five Nights at Freddy's: The Week Before - Optional - 2.5/10'\n2024-12-01 - Adding Links",
+    "changelog": "2025-01-23 - Added new catagory: Activities, along with 5-6 new things on it.\n2024-12-18 - Umbrella Academy Season 3 can be bought, link added\n2024-12-18 - Inside Out 1 & 2, Lovely Movies\n2024-12-18 - New Keyboard, My current keyboard is build into my laptop, and i am missing a key. So i figure, custom keyboard for the win!\n2024-12-18 - Added Fantastic Mr. Fox, Fantastic Mr. Movie, very, very nice and fun for all 3 of us i think\n2024-12-18 - Added link to Venom 1, 2, 3 entry\n2024-12-18 - Added The Mitchells vs the Machines,  very fun movie for the entire family.\n2024-12-01 - Added 'Five Nights at Freddy's: The Week Before - Optional - 2.5/10'\n2024-12-01 - Adding Links",
     "data": [
+        {
+            "name": "A energy healing, and tarot reading session with mom, or potentially with a professional.",
+            "category": "Activities",
+            "priority": 3,
+            "value": 8.2,
+            "description": "I think if you can not handle doing it, then its best if we go to some other person, willing to spend there energy on us. Even if it costs money, it could be rather fun. Just pay attention to reviews. <3 XO",
+            "link": "",
+            "timestamp": "2025-01-23T12:17:59.854Z"
+        },
         {
             "name": "The Wild Robot Movie",
             "category": "Movies & TV shows",
@@ -11,6 +20,24 @@
             "timestamp": "2024-12-01T22:33:24.023Z"
         },
         {
+            "name": "High Quality Scientific Chiropractic",
+            "category": "Activities",
+            "priority": 3,
+            "value": 8,
+            "description": "I would love to have a nice Chiropractic. Preferably ones approved by many, and high quality, sense we are going thru the effort.",
+            "link": "",
+            "timestamp": "2025-01-23T12:13:05.296Z"
+        },
+        {
+            "name": "Go to Gym with Mom",
+            "category": "Activities",
+            "priority": 3,
+            "value": 7.5,
+            "description": "I think it would be a nice, healthy family activity, to go to the gym together, and do some light exercise.",
+            "link": "",
+            "timestamp": "2025-01-23T12:14:49.811Z"
+        },
+        {
             "name": "Personal Server",
             "category": "Physical Things",
             "priority": 2,
@@ -18,6 +45,33 @@
             "description": "Would be nice to run my server from home, and have it have 64, or 32GB instead of the 30 or so we get max from online hosting.",
             "link": "",
             "timestamp": "2024-12-01T20:54:18.374Z"
+        },
+        {
+            "name": "A fucking lovely time swimming, or with a hot tub...",
+            "category": "Activities",
+            "priority": 2,
+            "value": 10,
+            "description": "It needs to be some place private, if we are bothering with it.",
+            "link": "",
+            "timestamp": "2025-01-23T12:19:43.404Z"
+        },
+        {
+            "name": "Hot Tub",
+            "category": "Physical Things",
+            "priority": 2,
+            "value": 10,
+            "description": "It would be nice to have our own hottub. Kinda crazy idea i know.",
+            "link": "",
+            "timestamp": "2025-01-23T12:20:29.879Z"
+        },
+        {
+            "name": "Great... Wolf Lodge",
+            "category": "Activities",
+            "priority": 2,
+            "value": 9,
+            "description": "Yep.... SWIMING GO BERRRRR YAY",
+            "link": "",
+            "timestamp": "2025-01-23T12:18:46.750Z"
         },
         {
             "name": "New Dresser",
