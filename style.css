@@ -153,6 +153,30 @@ label {
     color: white;
 }
 
+.nav-button_re {
+    background-color: #9326A6;
+    color: #007bff;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #0056b3;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button_re:hover {
+    background-color: #53155D;
+    color: white;
+    border-color: white;
+}
+
+.nav-button_re:focus {
+    outline: none;
+    background-color: #370E3E;
+    color: white;
+}
 /* Main Content Styling */
 #content {
     padding: 20px;
