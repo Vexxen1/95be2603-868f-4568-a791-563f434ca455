@@ -265,17 +265,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(() => alert('Updated wishlist saved to instance and copied to clipboard!'))
                 .catch(() => alert('Failed to copy updated wishlist to clipboard.'));
 
-            
+
             wishlist = wishlist.sortWishlistEntriesByTimestampNewest();
             renderWishlist(wishlist);
 
         });
-    document.getElementById('export').addEventListener('click', async () => {
-    // Sort the wishlist by priority (ascending)
-    const sortedWishlist = wishlist.sortWishlistEntriesByPriority('Up');
+        document.getElementById('export').addEventListener('click', async () => {
+            // Sort the wishlist by priority (ascending)
+            const sortedWishlist = wishlist.sortWishlistEntriesByPriority('Up');
 
-    // Table template for each wishlist entry
-    const tableTemplate = (index, entry) => `
+            // Table template for each wishlist entry
+            const tableTemplate = (index, entry) => `
         <w:tbl>
             <w:tblPr>
                 <w:tblStyle w:val="Table1"/>
@@ -355,8 +355,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </w:tbl>
     `;
 
-    // Generate the full document.xml content
-    const documentXML = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            // Generate the full document.xml content
+            const documentXML = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <w:document xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
                 xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -385,29 +385,31 @@ document.addEventListener('DOMContentLoaded', () => {
         </w:body>
     </w:document>`;
 
-    // Use JSZip to create the .docx file
-    const zip = new JSZip();
-    zip.file("word/document.xml", documentXML);
-    zip.file("[Content_Types].xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            // Use JSZip to create the .docx file
+            const zip = new JSZip();
+            zip.file("word/document.xml", documentXML);
+            zip.file("[Content_Types].xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
         <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
         <Default Extension="xml" ContentType="application/xml"/>
         <Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
     </Types>`);
-    zip.folder("_rels").file(".rels", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            zip.folder("_rels").file(".rels", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
         <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
     </Relationships>`);
 
-    // Generate and download the .docx file
-    const blob = await zip.generateAsync({ type: "blob" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "wishlist.docx";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    });
+            // Generate and download the .docx file
+            const blob = await zip.generateAsync({
+                type: "blob"
+            });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "wishlist.docx";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
         document.getElementById('copy-to-clipboard').addEventListener('click', () => {
             const name = document.getElementById('entry-name').value.trim();
             const category = document.getElementById('entry-category').value.trim();
