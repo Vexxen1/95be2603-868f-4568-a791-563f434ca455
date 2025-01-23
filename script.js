@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const dentry = filteredWishlist[entryNumber - 1];
             wishlist = wishlist.filter(
-                (entry) => !(entry.name === dentry.name && entry.category === dentry.category)
+                (entry) => !(entry === dentry)
             );
             const updatedData = {
                 changelog: changelog, // You can populate this field dynamically if needed
@@ -261,8 +261,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 .catch(() => alert('Failed to copy updated wishlist to clipboard.'));
 
             
-            filteredWishlist = filteredWishlist.sortWishlistEntriesByTimestampNewest();
-            renderWishlist(filteredWishlist);
+            wishlist = wishlist.sortWishlistEntriesByTimestampNewest();
+            renderWishlist(wishlist);
 
         });
         document.getElementById('copy-to-clipboard').addEventListener('click', () => {
