@@ -328,7 +328,53 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const handleDownload = () => {
-        const textToSave = "This has text"; // Replace with your desired content
+        const currentDate = new Date().toLocaleString(); // Get the current date and time
+        const sortedWishlist = wishlist.sortWishlistEntriesByPriority('Up'); // Sort by priority (up)
+
+        // Initialize text content
+        let textToSave = `
+        <div style="text-align: center; font-size: 24px; font-family: 'Times New Roman';">
+            <strong>The List!</strong>
+        </div>
+        <div style="text-align: center; font-size: 12px; font-family: 'Times New Roman';">
+            Created on ${currentDate}
+        </div>
+        <br>
+    `;
+
+        if (sortedWishlist.length > 0) {
+            // Loop through all entries and generate the table rows
+            sortedWishlist.forEach((entry) => {
+                const priorityColor = entry.priority === 3 ? 'red' :
+                    entry.priority === 2 ? 'yellow' : 'gray';
+
+                textToSave += `
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr>
+                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px; text-align: left;">
+                            ${entry.link ? `<a href="${entry.link}" style="color: blue; text-decoration: underline;">${entry.name}</a>` : entry.name} - ${entry.category}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px; color: ${priorityColor};">
+                            ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} - ${entry.value}/10
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px;">
+                            Description: ${entry.description}
+                        </td>
+                    </tr>
+                </table>
+            `;
+            });
+        } else {
+            textToSave += `
+            <div style="font-family: 'Times New Roman'; font-size: 14px; text-align: center; color: red;">
+                Uh oh... the list is empty... uh... this is an error more than likely! Contact me!
+            </div>
+        `;
+        }
         const blob = new Blob([textToSave], {
             type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
         }); // Blob for .docx file
