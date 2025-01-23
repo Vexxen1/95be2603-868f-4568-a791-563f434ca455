@@ -319,7 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('export').addEventListener('click', () => {
     });
 
-
     // Function to load Changelog
     const loadChangelog = () => {
         contentDiv.innerHTML = `
