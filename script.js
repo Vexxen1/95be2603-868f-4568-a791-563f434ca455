@@ -326,65 +326,58 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
     };
-
     const handleDownload = () => {
         const currentDate = new Date().toLocaleString(); // Get the current date and time
         const sortedWishlist = wishlist.sortWishlistEntriesByPriority('Up'); // Sort by priority (up)
 
         // Initialize text content
         let textToSave = `
-        <div style="text-align: center; font-size: 24px; font-family: 'Times New Roman';">
-            <strong>The List!</strong>
-        </div>
-        <div style="text-align: center; font-size: 12px; font-family: 'Times New Roman';">
-            Created on ${currentDate}
-        </div>
-        <br>
-    `;
+The List!
+Updated on ${currentDate}
 
+`;
+
+        // Add the "All Categories" section
         if (sortedWishlist.length > 0) {
-            // Loop through all entries and generate the table rows
+            textToSave += `     All Categories:\n`;
             sortedWishlist.forEach((entry) => {
-                const priorityColor = entry.priority === 3 ? 'red' :
-                    entry.priority === 2 ? 'yellow' : 'gray';
-
-                textToSave += `
-                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-                    <tr>
-                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px; text-align: left;">
-                            ${entry.link ? `<a href="${entry.link}" style="color: blue; text-decoration: underline;">${entry.name}</a>` : entry.name} - ${entry.category}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px; color: ${priorityColor};">
-                            ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} - ${entry.value}/10
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px;">
-                            Description: ${entry.description}
-                        </td>
-                    </tr>
-                </table>
-            `;
+                textToSave += `     ${entry.name} - ${entry.category}\n`;
+                textToSave += `     Priority: ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} (${entry.value}/10)\n`;
+                textToSave += `     Description: ${entry.description}\n\n`;
             });
         } else {
-            textToSave += `
-            <div style="font-family: 'Times New Roman'; font-size: 14px; text-align: center; color: red;">
-                Uh oh... the list is empty... uh... this is an error more than likely! Contact me!
-            </div>
-        `;
+            textToSave += `     Uh oh... the list is empty... uh... this is an error more than likely! Contact Me!\n\n`;
         }
+
+        // Group entries by category
+        const categories = [...new Set(sortedWishlist.map(entry => entry.category))];
+        categories.forEach((category) => {
+            const categoryEntries = sortedWishlist.filter(entry => entry.category === category);
+
+            textToSave += `     ${category}:\n`;
+            categoryEntries.forEach((entry) => {
+                textToSave += `     ${entry.name}\n`;
+                textToSave += `     Priority: ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} (${entry.value}/10)\n`;
+                textToSave += `     Description: ${entry.description}\n\n`;
+            });
+        });
+
+        // Add the changelog at the end
+        textToSave += `     Changelog:\n`;
+        textToSave += `     ${changelog || 'No changes recorded yet.'}\n`;
+
+        // Create a Blob object for the plain text file
         const blob = new Blob([textToSave], {
-            type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-        }); // Blob for .docx file
-        const downloadLink = document.createElement('a'); // Create a temporary link element
-        downloadLink.href = URL.createObjectURL(blob); // Create a URL for the Blob
-        downloadLink.download = 'wishlist.docx'; // Set the file name for download
-        document.body.appendChild(downloadLink); // Append the link to the body
-        downloadLink.click(); // Trigger the download
-        document.body.removeChild(downloadLink); // Clean up the link element
+            type: 'text/plain'
+        });
+        const downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = 'wishlist.txt'; // Save as .txt for simplicity
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
     };
+
 
     // Event listener for the Upload button
     document.getElementById('download').addEventListener('click', handleDownload);
