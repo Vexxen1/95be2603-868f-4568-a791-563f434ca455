@@ -332,48 +332,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initialize text content
         let textToSave = `
-        <div style="text-align: center; font-size: 24px; font-family: 'Times New Roman';">
-            <strong>The List!</strong>
-        </div>
-        <div style="text-align: center; font-size: 12px; font-family: 'Times New Roman';">
-            Created on ${currentDate}
-        </div>
-        <br>
-    `;
+The List!
+This file was created on ${currentDate}
+Sorry mom, best i could do for formating!
 
+`;
+
+        // Add the "All Categories" section
         if (sortedWishlist.length > 0) {
-            // Loop through all entries and generate the table rows
+            textToSave += `     All Categories:\n`;
             sortedWishlist.forEach((entry) => {
-                const priorityColor = entry.priority === 3 ? 'red' :
-                    entry.priority === 2 ? 'yellow' : 'gray';
-
-                textToSave += `
-                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-                    <tr>
-                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px; text-align: left;">
-                            ${entry.link ? `<a href="${entry.link}" style="color: blue; text-decoration: underline;">${entry.name}</a>` : entry.name} - ${entry.category}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px; color: ${priorityColor};">
-                            ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} - ${entry.value}/10
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px;">
-                            Description: ${entry.description}
-                        </td>
-                    </tr>
-                </table>
-            `;
+                textToSave += `     ${entry.name} - ${entry.category}\n`;
+                textToSave += `Priority: ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} (${entry.value}/10)\n`;
+                textToSave += `Description: ${entry.description}\n\n`;
             });
         } else {
-            textToSave += `
-            <div style="font-family: 'Times New Roman'; font-size: 14px; text-align: center; color: red;">
-                Uh oh... the list is empty... uh... this is an error more than likely!
-            </div>
-        `;
+            textToSave += `     Uh oh... the list is empty... uh... this is an error more than likely! Contact Me!\n\n`;
         }
+
+        // Group entries by category
+        const categories = [...new Set(sortedWishlist.map(entry => entry.category))];
+        categories.forEach((category) => {
+            const categoryEntries = sortedWishlist.filter(entry => entry.category === category);
+
+            textToSave += `     ${category}:\n`;
+            categoryEntries.forEach((entry) => {
+                textToSave += `     ${entry.name}\n`;
+                textToSave += `Priority: ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} (${entry.value}/10)\n`;
+                textToSave += `Description: ${entry.description}\n\n`;
+            });
+        });
+
+        // Add the changelog at the end
+        textToSave += `     Changelog:\n`;
+        textToSave += `${changelog || 'No changes recorded yet.'}\n`;
+
         // Create a Blob object for the plain text file
         const blob = new Blob([textToSave], {
             type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
