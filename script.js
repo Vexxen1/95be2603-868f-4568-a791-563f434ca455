@@ -328,13 +328,13 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     };
 
-    // Function to create and download a .txt file
+    // Function to create and download a .txt fileconst handleDownload = () => {
     const handleDownload = () => {
-        const textToSave = "This has text";
-        const blob = new Blob([textToSave], { type: 'text/plain' }); // Create a Blob object with the text
+        const textToSave = "This has text"; // Replace with your desired content
+        const blob = new Blob([textToSave], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' }); // Blob for .docx file
         const downloadLink = document.createElement('a'); // Create a temporary link element
         downloadLink.href = URL.createObjectURL(blob); // Create a URL for the Blob
-        downloadLink.download = 'upload.txt'; // Set the file name for download
+        downloadLink.download = 'wishlist.docx'; // Set the file name for download
         document.body.appendChild(downloadLink); // Append the link to the body
         downloadLink.click(); // Trigger the download
         document.body.removeChild(downloadLink); // Clean up the link element
