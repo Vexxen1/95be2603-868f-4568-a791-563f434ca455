@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <input id="entry-load-number" type="number" min="1" class="input-field" />
                     </label>
                     <button id="load-entry" class="btn">Load</button>
+                    <button id="delete-entry" class="btn_red">Delete</button>
                 </div>
                 <div class="form-group">
                     <label>Name:
@@ -240,6 +241,25 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('entry-description').value = entry.description;
             document.getElementById('entry-link').value = entry.link;
         });
+        document.getElementById('delete-entry').addEventListener('click', () => {
+            const entryNumber = parseInt(document.getElementById('entry-load-number').value, 10);
+            if (isNaN(entryNumber) || entryNumber < 1 || entryNumber > filteredWishlist.length) {
+                alert('Invalid entry number.');
+                return;
+            }
+
+            const Dentry = filteredWishlist[entryNumber - 1];
+            wishlist = wishlist.filter(
+                (entry) => !(Dentry)
+            );
+            wishlist = wishlist.sortWishlistEntriesByTimestampNewest();
+            navigator.clipboard.writeText(JSON.stringify(updatedData, null, 4))
+                .then(() => alert('Updated wishlist saved to instance and copied to clipboard!'))
+                .catch(() => alert('Failed to copy updated wishlist to clipboard.'));
+
+            // Re-render the list to reflect changes
+            renderWishlist(wishlist);
+        });
         document.getElementById('copy-to-clipboard').addEventListener('click', () => {
             const name = document.getElementById('entry-name').value.trim();
             const category = document.getElementById('entry-category').value.trim();
@@ -272,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
             wishlist.push(newEntry);
 
             // Sort the wishlist by priority
-            wishlist = wishlist.sortWishlistEntriesByPriority('Up');
+            wishlist = wishlist.sortWishlistEntriesByTimestampNewest();
 
             // Create the new formatted JSON object
             const updatedData = {
