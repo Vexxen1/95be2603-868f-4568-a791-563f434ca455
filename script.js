@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create a new document
         const doc = new Document();
 
-        // Add title
+        // Add the title
         doc.addSection({
             children: [
                 new Paragraph({
@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         new TextRun({
                             text: "The List!",
                             bold: true,
-                            size: 48, // 24pt font size
+                            size: 48, // 24pt font
                             font: "Times New Roman",
                         }),
                     ],
@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     children: [
                         new TextRun({
                             text: `Created on ${new Date().toLocaleString()}`,
-                            size: 24, // 12pt font size
+                            size: 24, // 12pt font
                             font: "Times New Roman",
                         }),
                     ],
@@ -375,10 +375,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const sortedWishlist = wishlist.sortWishlistEntriesByPriority("Up");
 
         if (sortedWishlist.length > 0) {
-            // Add a table for the entries
+            // Create a table for the wishlist entries
             const tableRows = sortedWishlist.map((item) => {
                 const priorityColor =
-                    item.priority === 3 ? "red" : item.priority === 2 ? "yellow" : "gray";
+                    item.priority === 3 ? "FF0000" : item.priority === 2 ? "FFA500" : "808080";
 
                 return new TableRow({
                     children: [
@@ -390,8 +390,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                             text: `${item.name} (${item.category})`,
                                             font: "Times New Roman",
                                             size: 24,
+                                            color: "000000", // Black
                                             underline: item.link ? "single" : undefined,
-                                            color: item.link ? "0000FF" : undefined,
                                         }),
                                     ],
                                 }),
@@ -430,7 +430,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
-            // Add the table to the document
             doc.addSection({
                 children: [
                     new Table({
@@ -439,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ],
             });
         } else {
-            // Add an error message if the list is empty
+            // Add a message if the list is empty
             doc.addSection({
                 children: [
                     new Paragraph({
@@ -467,8 +466,6 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadLink.click();
         document.body.removeChild(downloadLink);
     };
-
-
     // Event listener for the Upload button
     document.getElementById('download').addEventListener('click', handleDownload);
 
