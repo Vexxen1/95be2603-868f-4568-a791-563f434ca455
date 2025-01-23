@@ -333,46 +333,35 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize text content
         let textToSave = `
 The List!
-Updated on ${currentDate}
+Created on ${currentDate}
 
 `;
 
-        // Add the "All Categories" section
         if (sortedWishlist.length > 0) {
-            textToSave += `     All Categories:\n`;
+            // Loop through all entries and format them
             sortedWishlist.forEach((entry) => {
-                textToSave += `     ${entry.name} - ${entry.category}\n`;
-                textToSave += `     Priority: ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} (${entry.value}/10)\n`;
-                textToSave += `     Description: ${entry.description}\n\n`;
+                const priorityLabel = entry.priority === 3 ? 'Top Priority' :
+                    entry.priority === 2 ? 'Nice-to-Have' : 'Optional';
+                textToSave += `
+${entry.name} - ${entry.category}
+${priorityLabel} - ${entry.value}/10
+Description: ${entry.description}
+
+`;
             });
         } else {
-            textToSave += `     Uh oh... the list is empty... uh... this is an error more than likely! Contact Me!\n\n`;
+            textToSave += `
+Uh oh... the list is empty... uh... this is an error more than likely! Contact ME!
+`;
         }
-
-        // Group entries by category
-        const categories = [...new Set(sortedWishlist.map(entry => entry.category))];
-        categories.forEach((category) => {
-            const categoryEntries = sortedWishlist.filter(entry => entry.category === category);
-
-            textToSave += `     ${category}:\n`;
-            categoryEntries.forEach((entry) => {
-                textToSave += `     ${entry.name}\n`;
-                textToSave += `     Priority: ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} (${entry.value}/10)\n`;
-                textToSave += `     Description: ${entry.description}\n\n`;
-            });
-        });
-
-        // Add the changelog at the end
-        textToSave += `     Changelog:\n`;
-        textToSave += `     ${changelog || 'No changes recorded yet.'}\n`;
 
         // Create a Blob object for the plain text file
         const blob = new Blob([textToSave], {
-            type: 'text/plain'
+            type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
         });
         const downloadLink = document.createElement('a');
         downloadLink.href = URL.createObjectURL(blob);
-        downloadLink.download = 'wishlist.txt'; // Save as .txt for simplicity
+        downloadLink.download = 'wishlist.docx';
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);
