@@ -316,19 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-    document.getElementById('reload').addEventListener('click', () => {
-        
-        fetch('wishlist.json')
-            .then(response => response.json())
-            .then(data => {
-                wishlist = data.data; // Load the nested "data" array
-                changelog = data.changelog; // Load the changelog
-                console.log('Wishlist Reloaded:', wishlist);
-                console.log('Changelog Reloaded:', changelog);
-                alert('Reloaded Data!'))
-            })
-            .catch(error => console.error('Error Reloading wishlist:', error));
-        renderWishlist(wishlist);
+    document.getElementById('export').addEventListener('click', () => {
     });
 
 
