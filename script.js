@@ -332,29 +332,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initialize text content
         let textToSave = `
-The List!
-Created on ${currentDate}
-
-`;
+        <div style="text-align: center; font-size: 24px; font-family: 'Times New Roman';">
+            <strong>The List!</strong>
+        </div>
+        <div style="text-align: center; font-size: 12px; font-family: 'Times New Roman';">
+            Created on ${currentDate}
+        </div>
+        <br>
+    `;
 
         if (sortedWishlist.length > 0) {
-            // Loop through all entries and format them
+            // Loop through all entries and generate the table rows
             sortedWishlist.forEach((entry) => {
-                const priorityLabel = entry.priority === 3 ? 'Top Priority' :
-                    entry.priority === 2 ? 'Nice-to-Have' : 'Optional';
-                textToSave += `
-${entry.name} - ${entry.category}
-${priorityLabel} - ${entry.value}/10
-Description: ${entry.description}
+                const priorityColor = entry.priority === 3 ? 'red' :
+                    entry.priority === 2 ? 'yellow' : 'gray';
 
-`;
+                textToSave += `
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr>
+                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px; text-align: left;">
+                            ${entry.link ? `<a href="${entry.link}" style="color: blue; text-decoration: underline;">${entry.name}</a>` : entry.name} - ${entry.category}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px; color: ${priorityColor};">
+                            ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} - ${entry.value}/10
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-family: 'Times New Roman'; font-size: 14px;">
+                            Description: ${entry.description}
+                        </td>
+                    </tr>
+                </table>
+            `;
             });
         } else {
             textToSave += `
-Uh oh... the list is empty... uh... this is an error more than likely! Contact ME!
-`;
+            <div style="font-family: 'Times New Roman'; font-size: 14px; text-align: center; color: red;">
+                Uh oh... the list is empty... uh... this is an error more than likely!
+            </div>
+        `;
         }
-
         // Create a Blob object for the plain text file
         const blob = new Blob([textToSave], {
             type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
