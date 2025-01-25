@@ -343,6 +343,7 @@ Sorry mom, best i could do for formating!
             textToSave += `=-=All Categories=-=\n\n`;
             sortedWishlist.forEach((entry) => {
                 textToSave += `     ${entry.name} - ${entry.category}\n`;
+                textToSave += `Link: ${entry.link}\n`;
                 textToSave += `Priority: ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} (${entry.value}/10)\n`;
                 textToSave += `Description: ${entry.description}\n\n`;
             });
@@ -358,6 +359,7 @@ Sorry mom, best i could do for formating!
             textToSave += `\n=-=${category}=-=\n\n`;
             categoryEntries.forEach((entry) => {
                 textToSave += `     ${entry.name}\n`;
+                textToSave += `Link: ${entry.link}\n`;
                 textToSave += `Priority: ${entry.priority === 3 ? 'Top Priority' : entry.priority === 2 ? 'Nice-to-Have' : 'Optional'} (${entry.value}/10)\n`;
                 textToSave += `Description: ${entry.description}\n\n`;
             });
