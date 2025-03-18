@@ -1,6 +1,15 @@
 {
-    "changelog": "March 17, 2025 - Added Overlord Light Novel Set 1-16\n2025-01-25 - Added Listen to my MUSIC with Fam, and 2 YT videos i want to watch with fam\n2025-01-23 - Added new catagory: Activities, along with 5-6 new things on it.\n2024-12-18 - Umbrella Academy Season 3 can be bought, link added\n2024-12-18 - Inside Out 1 & 2, Lovely Movies\n2024-12-18 - New Keyboard, My current keyboard is build into my laptop, and i am missing a key. So i figure, custom keyboard for the win!\n2024-12-18 - Added Fantastic Mr. Fox, Fantastic Mr. Movie, very, very nice and fun for all 3 of us i think\n2024-12-18 - Added link to Venom 1, 2, 3 entry\n2024-12-18 - Added The Mitchells vs the Machines,  very fun movie for the entire family.\n2024-12-01 - Added 'Five Nights at Freddy's: The Week Before - Optional - 2.5/10'\n2024-12-01 - Adding Links",
+    "changelog": "March 17, 2025 - Added Overlord Light Novel Set 1-16, added mouse, deleted entries\n2025-01-25 - Added Listen to my MUSIC with Fam, and 2 YT videos i want to watch with fam\n2025-01-23 - Added new catagory: Activities, along with 5-6 new things on it.\n2024-12-18 - Umbrella Academy Season 3 can be bought, link added\n2024-12-18 - Inside Out 1 & 2, Lovely Movies\n2024-12-18 - New Keyboard, My current keyboard is build into my laptop, and i am missing a key. So i figure, custom keyboard for the win!\n2024-12-18 - Added Fantastic Mr. Fox, Fantastic Mr. Movie, very, very nice and fun for all 3 of us i think\n2024-12-18 - Added link to Venom 1, 2, 3 entry\n2024-12-18 - Added The Mitchells vs the Machines,  very fun movie for the entire family.\n2024-12-01 - Added 'Five Nights at Freddy's: The Week Before - Optional - 2.5/10'\n2024-12-01 - Adding Links",
     "data": [
+        {
+            "name": "New Computer Mouse",
+            "category": "Physical Things",
+            "priority": 2,
+            "value": 8,
+            "description": "I need a new mouse",
+            "link": "",
+            "timestamp": "2025-03-18T04:10:13.279Z"
+        },
         {
             "name": "Overlord Light Novel Set 1-16",
             "category": "Hardback Books",
@@ -18,24 +27,6 @@
             "description": "I would love this. XO",
             "link": "",
             "timestamp": "2025-01-25T09:38:10.916Z"
-        },
-        {
-            "name": "Watch H.S with Fam",
-            "category": "Activities",
-            "priority": 2,
-            "value": 6,
-            "description": "Good music video 3 min, 54 sec long.",
-            "link": "https://www.youtube.com/watch?v=kK0KPuH32mc",
-            "timestamp": "2025-01-25T09:36:53.064Z"
-        },
-        {
-            "name": "Watch Transcendental Cha Cha Cha with Fam",
-            "category": "Activities",
-            "priority": 2,
-            "value": 6,
-            "description": "Good music video 3 min, 22 sec long.",
-            "link": "https://www.youtube.com/watch?v=BLzxuIfD9rU",
-            "timestamp": "2025-01-25T09:35:19.505Z"
         },
         {
             "name": "Hot Tub",
@@ -99,15 +90,6 @@
             "description": "FNAF movie is a historic event",
             "link": "https://www.amazon.com/Five-Nights-Freddys-Blu-ray-Digital/dp/B0CLQRXQNF",
             "timestamp": "2024-12-27T02:50:27.433Z"
-        },
-        {
-            "name": "New Keyboard",
-            "category": "Physical Things",
-            "priority": 2,
-            "value": 8,
-            "description": "My current keyboard is build into my laptop, and i am missing a key. So i figure, custom keyboard for the win!",
-            "link": "https://altcustoms.com/products/t1-pro-keyboard-2?designId=468051",
-            "timestamp": "2024-12-18T07:49:52.372Z"
         },
         {
             "name": "Inside Out 1 & 2",
