@@ -2,6 +2,15 @@
     "changelog": "March 17, 2025 - Added Overlord Light Novel Set 1-16, added mouse, deleted entries\n2025-01-25 - Added Listen to my MUSIC with Fam, and 2 YT videos i want to watch with fam\n2025-01-23 - Added new catagory: Activities, along with 5-6 new things on it.\n2024-12-18 - Umbrella Academy Season 3 can be bought, link added\n2024-12-18 - Inside Out 1 & 2, Lovely Movies\n2024-12-18 - New Keyboard, My current keyboard is build into my laptop, and i am missing a key. So i figure, custom keyboard for the win!\n2024-12-18 - Added Fantastic Mr. Fox, Fantastic Mr. Movie, very, very nice and fun for all 3 of us i think\n2024-12-18 - Added link to Venom 1, 2, 3 entry\n2024-12-18 - Added The Mitchells vs the Machines,  very fun movie for the entire family.\n2024-12-01 - Added 'Five Nights at Freddy's: The Week Before - Optional - 2.5/10'\n2024-12-01 - Adding Links",
     "data": [
         {
+            "name": "The Bad Guys Movie",
+            "category": "Movies & TV shows",
+            "priority": 2,
+            "value": 10,
+            "description": "Lovely movie",
+            "link": "https://www.amazon.com/Bad-Guys-Collectors-Blu-ray-Digital/dp/B09YLLWC1H/ref=mp_s_a_1_3?adgrpid=1229255081810756&dib=eyJ2IjoiMSJ9.e7PaZTYFhVex7FZfEmrQVFvnTrwxT6CCbTKIf6y0a8OTUitzfwNC5eJFoT8wzRnd4RYrFjbRs41s7zrA8kQjVuxgYDlFEllJR5mFtyhRBMHvUR-fJLvGyImlnFmh0HNKhnlDh-qvRZ-ZVX4QaDMtPZp-T_DoKvJ4yJtj9E3j_Bjt_wJ2EwMapgkOQWNzi7q5BZoK5BLOoZxA5Dr8qcSuxw.Zl1GhKG7jLdeb4VGCVqh-7noVe_XiBGCBhh8vFUt2tg&dib_tag=se&hvadid=76828576479178&hvbmt=bp&hvdev=m&hvlocphy=86797&hvnetw=s&hvqmt=p&hvtargid=kwd-76828804419145%3Aloc-190&hydadcr=4511_13293177&keywords=movie+the+bad+guys&mcid=572010981d6a36dcbf3c080e64baa593&msclkid=6ba14ffe78431458e16227730e0cefda&qid=1754101331&sr=8-3rqbs-Owj05xeovPbL9X0_JNGdVE-2_F_9s5vq-9weKx22LMrRtvmlMtooRuDQYX7MQdYAnXe2wW7A_ooqV99fF6bGlL4s_6gM0XaHwsY-pnrlUVdqXo6zuFEE49HhgRxtpQHCLzrE2jZTTlZne8Qm48XUBG1Mz5KZTGyC5fMYdIYdIJZWasY-rLdQjQX1whkoOVUio.vIGTHrs8NqZ2W4DZHjFfX6HZQit2v_1R-cnRjaWjKN8&dib_tag=se&keywords=Fantastic+Mr+Fox&qid=1734507117&s=movies-tv&sprefix=fantastic+mr+fox%2Cmovies-tv%2C168&sr=1-1",
+            "timestamp": "2025-08-02T02:26:01.927Z"
+        },
+        {
             "name": "New Computer Mouse",
             "category": "Physical Things",
             "priority": 2,
