@@ -11,15 +11,6 @@
             "timestamp": "2024-12-27T02:50:27.433Z"
         },
         {
-            "name": "All of rick and morty",
-            "category": "Movies & TV shows",
-            "priority": 2,
-            "value": 2,
-            "description": "Eh",
-            "link": "",
-            "timestamp": "2025-08-02T02:26:01.927Z"
-        },
-        {
             "name": "The Fantastic 4 Movie",
             "category": "Movies & TV shows",
             "priority": 3,
@@ -344,7 +335,7 @@
             "timestamp": "2024-12-01T22:03:13.724Z"
         },
         {
-            "name": "All of Rick & Morty: 1-5, 6, 7,",
+            "name": "All of Rick & Morty: 1-5, 6, 7, 8",
             "category": "Movies & TV shows",
             "priority": 1,
             "value": 4,
